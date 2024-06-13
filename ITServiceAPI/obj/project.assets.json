@@ -4530,11 +4530,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\ITServiceAPI.csproj",
+      "projectUniqueName": "D:\\Spektra---Training-Assignment\\MajorProject\\ITServiceAPI\\ITServiceAPI.csproj",
       "projectName": "ITServiceAPI",
-      "projectPath": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\ITServiceAPI.csproj",
+      "projectPath": "D:\\Spektra---Training-Assignment\\MajorProject\\ITServiceAPI\\ITServiceAPI.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\obj\\",
+      "outputPath": "D:\\Spektra---Training-Assignment\\MajorProject\\ITServiceAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
