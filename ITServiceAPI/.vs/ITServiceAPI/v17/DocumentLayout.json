@@ -1,0 +1,333 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\spektra---training-assignment\\finalproject\\itserviceapi\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\spektra---training-assignment\\finalproject\\itserviceapi\\controllers\\requestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:controllers\\requestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\spektra---training-assignment\\finalproject\\itserviceapi\\models\\itservicecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:models\\itservicecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\spektra---training-assignment\\finalproject\\itserviceapi\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\spektra---training-assignment\\finalproject\\itserviceapi\\controllers\\projectmodulescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:controllers\\projectmodulescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\spektra---training-assignment\\finalproject\\itserviceapi\\models\\request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:models\\request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\spektra---training-assignment\\finalproject\\itserviceapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\spektra---training-assignment\\finalproject\\itserviceapi\\models\\projectsmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:models\\projectsmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\spektra---training-assignment\\finalproject\\itserviceapi\\controllers\\projectmembercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:controllers\\projectmembercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\spektra---training-assignment\\finalproject\\itserviceapi\\models\\projectmember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:models\\projectmember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\spektra---training-assignment\\finalproject\\itserviceapi\\models\\projectbranch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:models\\projectbranch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\spektra---training-assignment\\finalproject\\itserviceapi\\controllers\\projectbranchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:controllers\\projectbranchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\spektra---training-assignment\\finalproject\\itserviceapi\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\spektra---training-assignment\\finalproject\\itserviceapi\\controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\spektra---training-assignment\\finalproject\\itserviceapi\\controllers\\projectactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:controllers\\projectactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\spektra---training-assignment\\finalproject\\itserviceapi\\models\\projectaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:models\\projectaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\spektra---training-assignment\\finalproject\\itserviceapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProjectsModule.cs",
+              "DocumentMoniker": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Models\\ProjectsModule.cs",
+              "RelativeDocumentMoniker": "Models\\ProjectsModule.cs",
+              "ToolTip": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Models\\ProjectsModule.cs",
+              "RelativeToolTip": "Models\\ProjectsModule.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAQwCkAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T15:31:59.48Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ItserviceContext.cs",
+              "DocumentMoniker": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Models\\ItserviceContext.cs",
+              "RelativeDocumentMoniker": "Models\\ItserviceContext.cs",
+              "ToolTip": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Models\\ItserviceContext.cs",
+              "RelativeToolTip": "Models\\ItserviceContext.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAuwCAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T11:15:02.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProjectModulesController.cs",
+              "DocumentMoniker": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Controllers\\ProjectModulesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProjectModulesController.cs",
+              "ToolTip": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Controllers\\ProjectModulesController.cs",
+              "RelativeToolTip": "Controllers\\ProjectModulesController.cs",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAYwFkAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T11:27:50.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RequestController.cs",
+              "DocumentMoniker": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Controllers\\RequestController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RequestController.cs",
+              "ToolTip": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Controllers\\RequestController.cs",
+              "RelativeToolTip": "Controllers\\RequestController.cs",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAcwFYAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T11:28:37.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RolesController.cs",
+              "DocumentMoniker": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Controllers\\RolesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RolesController.cs",
+              "ToolTip": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Controllers\\RolesController.cs",
+              "RelativeToolTip": "Controllers\\RolesController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAFEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T11:28:55.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Request.cs",
+              "DocumentMoniker": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Models\\Request.cs",
+              "RelativeDocumentMoniker": "Models\\Request.cs",
+              "ToolTip": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Models\\Request.cs",
+              "RelativeToolTip": "Models\\Request.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwCMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T16:03:49.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Role.cs",
+              "DocumentMoniker": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Models\\Role.cs",
+              "RelativeDocumentMoniker": "Models\\Role.cs",
+              "ToolTip": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Models\\Role.cs",
+              "RelativeToolTip": "Models\\Role.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAQwBkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T16:14:17.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProjectMemberController.cs",
+              "DocumentMoniker": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Controllers\\ProjectMemberController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProjectMemberController.cs",
+              "ToolTip": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Controllers\\ProjectMemberController.cs",
+              "RelativeToolTip": "Controllers\\ProjectMemberController.cs",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAgwGYAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T11:27:26.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-11T11:55:17.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProjectMember.cs",
+              "DocumentMoniker": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Models\\ProjectMember.cs",
+              "RelativeDocumentMoniker": "Models\\ProjectMember.cs",
+              "ToolTip": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Models\\ProjectMember.cs",
+              "RelativeToolTip": "Models\\ProjectMember.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T14:01:00.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EmployeeController.cs",
+              "ToolTip": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "Controllers\\EmployeeController.cs",
+              "ViewState": "AQIAADoAAAAAAAAAAAAcwEAAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T11:25:31.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProjectBranch.cs",
+              "DocumentMoniker": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Models\\ProjectBranch.cs",
+              "RelativeDocumentMoniker": "Models\\ProjectBranch.cs",
+              "ToolTip": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Models\\ProjectBranch.cs",
+              "RelativeToolTip": "Models\\ProjectBranch.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAQwBkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T13:51:43.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ProjectController.cs",
+              "DocumentMoniker": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Controllers\\ProjectController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProjectController.cs",
+              "ToolTip": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Controllers\\ProjectController.cs",
+              "RelativeToolTip": "Controllers\\ProjectController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAEMAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T11:25:57.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ProjectBranchController.cs",
+              "DocumentMoniker": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Controllers\\ProjectBranchController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProjectBranchController.cs",
+              "ToolTip": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Controllers\\ProjectBranchController.cs",
+              "RelativeToolTip": "Controllers\\ProjectBranchController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADQAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T11:26:50.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ProjectAction.cs",
+              "DocumentMoniker": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Models\\ProjectAction.cs",
+              "RelativeDocumentMoniker": "Models\\ProjectAction.cs",
+              "ToolTip": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Models\\ProjectAction.cs",
+              "RelativeToolTip": "Models\\ProjectAction.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAA5wB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T13:35:01.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ProjectActionController.cs",
+              "DocumentMoniker": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Controllers\\ProjectActionController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProjectActionController.cs",
+              "ToolTip": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Controllers\\ProjectActionController.cs",
+              "RelativeToolTip": "Controllers\\ProjectActionController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGgAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T11:26:26.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Spektra---Training-Assignment\\FinalProject\\ITServiceAPI\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T11:51:48.908Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

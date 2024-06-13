@@ -1,0 +1,56 @@
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  .navbar{
+    background: #008080;
+  }
+
+  .list-group-item{
+    color: #008080;
+    font-weight: 600;
+    cursor: pointer;
+    border-left: none;
+  }
+
+  .list-group-item.active {
+    background-color: #ccffff !important; 
+    border-color: #ccffff !important; 
+    transition: margin 0.25s ease-out;
+  }
+
+  #sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -310px;
+    transition: margin 0.25s ease-out;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .navbar .navbar-toggler-btn {
+    border: none;
+    font-size: 20px;
+    margin: 10px;
+  }
+
+  .navbar .btn-outline-light {
+    border: none;
+  }
+ 
+  .collapse:not(.show) {
+    display: none;
+  }
+  
+  .collapse.show {
+    display: block;
+    margin-left: 20px;
+  }
+
+  
