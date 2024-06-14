@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +16,17 @@ import { CreateRequestComponent } from './create-request/create-request.componen
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
+import { Amplify } from 'aws-amplify';
 
+Amplify.configure({
+  Auth: {
+    Cognito: {
+      userPoolId: 'eu-north-1_sngTTrE6A',
+      userPoolClientId: '22pkilncepm0m8lli1tl2k7qg0',
+    },
+  },
+});
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,17 +37,16 @@ import { HttpClientModule } from '@angular/common/http';
     ProjectMemberComponent,
     ProjectBranchComponent,
     CreateRequestComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AmplifyAuthenticatorModule,
   ],
-  providers: [
-    provideClientHydration()
-  ],
-  bootstrap: [AppComponent]
+  providers: [provideClientHydration()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
