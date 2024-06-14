@@ -23,20 +23,6 @@ namespace ITServiceAPI.Controllers
             return await _context.Projects.ToListAsync();
         }
 
-        // GET: api/Projects/5
-        [HttpGet("GetProjectById/{id}")]
-        public async Task<ActionResult<Project>> GetProject(int id)
-        {
-            var project = await _context.Projects.FindAsync(id);
-
-            if (project == null)
-            {
-                return Ok(new {message="not found"});
-            }
-
-            return project;
-        }
-
 
         // POST: api/Projects
         [HttpPost]
@@ -53,30 +39,27 @@ namespace ITServiceAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProject(int id, Project project)
         {
-            if (id != project.ProjectId)
+            var record = await _context.Projects.FindAsync(id);
+            if (record == null)
             {
-                return Ok(new {message="not found"});
+                return Ok(new { message = "not found" });
             }
 
-            _context.Entry(project).State = EntityState.Modified;
 
             try
             {
+                record.ProjectName = project.ProjectName;
+                record.Description = project.Description;
+                record.StartDate = project.StartDate;
+                record.EndDate = project.EndDate;
                 await _context.SaveChangesAsync();
-                //return Ok(new { message = "updated" });
+
+                return Ok(new { message = "updated" });
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception exp)
             {
-                if (!ProjectExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return Ok(exp);
             }
-            return NoContent();
         }
 
 

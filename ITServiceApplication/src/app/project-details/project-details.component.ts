@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ProjectService } from '../services/project.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-project-details',
@@ -7,40 +9,30 @@ import { Component } from '@angular/core';
 })
 export class ProjectDetailsComponent {
   formTitle: string = "Add Employee";
-  roles: any;
   btnText: string = "Save";
-  empRecord: any[] = [];  
+  projectRecord: any[] = [];  
   originalEmpRecords: any[] = [];  
   showMsg: string = "";
-  RoleId: any;
-  constructor(){}
+
+
+  constructor(private projectService:ProjectService){}
 
   ngOnInit(): void {
-    this.getEmpRecord();
+    this.getProjectRecord();
   }
 
-  getRole(): void {
-    this.RoleService.getRoles().subscribe({
-        next: (data) => {
-          this.roles = data
-        },
-        error: (err) => {
-          console.log(err);
-        }
-    });
-  }
+  
 
-  openForm() {
-    this.getRole();
-    this.myform.resetForm(); 
-  }
+  // openForm() {
+  //   this.myform.resetForm(); 
+  // }
   
 
 
-  getEmpRecord(): void {
-    this.empService.getEmployee()
+  getProjectRecord(): void {
+    this.projectService.getProject()
       .subscribe({
-        next: (data) => this.empRecord = data,
+        next: (data) => this.projectRecord = data,
         error: (err) => {
           console.log(err);
         }
@@ -48,33 +40,29 @@ export class ProjectDetailsComponent {
   }
 
 
-  searchRecords(event: any) {
-    const searchTerm = event.target.value.toLowerCase();
-    if (!searchTerm) {
-      this.empRecord = this.originalEmpRecords; 
-      return;
-    }
-    this.empRecord = this.originalEmpRecords.filter(emp => 
-      (emp.firstName + ' ' + emp.lastName).toLowerCase().includes(searchTerm) ||
-      emp.phone.includes(searchTerm) ||
-      emp.email.toLowerCase().includes(searchTerm) ||
-      emp.address.toLowerCase().includes(searchTerm) ||
-      emp.roleId.toString().includes(searchTerm)
-    );
-  }
+  // searchRecords(event: any) {
+  //   const searchTerm = event.target.value.toLowerCase();
+  //   if (!searchTerm) {
+  //     this.empRecord = this.originalEmpRecords; 
+  //     return;
+  //   }
+  //   this.empRecord = this.originalEmpRecords.filter(emp => 
+  //     (emp.firstName + ' ' + emp.lastName).toLowerCase().includes(searchTerm) ||
+  //     emp.phone.includes(searchTerm) ||
+  //     emp.email.toLowerCase().includes(searchTerm) ||
+  //     emp.address.toLowerCase().includes(searchTerm) ||
+  //     emp.roleId.toString().includes(searchTerm)
+  //   );
+  // }
 
-  saveProjectRecord(empData: any): void {
+  saveProjectRecord(projectData: any): void {
     if(this.btnText=="Save"){
-      this.empService.createEmployee(empData.value).subscribe({
+      this.projectService.createEmployee(projectData.value).subscribe({
         next: (data) => {
           if(data.message=="save"){
-            this.getEmpRecord();
-            empData.reset();
+            this.getProjectRecord();
+            projectData.reset();
             this.showMsg="Record save";
-          }else if(data.message=="email find"){
-            this.showMsg="Email is already used";
-          }else if(data.message=="phone find"){
-            this.showMsg="Phone Number is already used";
           }
           setTimeout(() => {
             this.showMsg = "";
@@ -84,16 +72,13 @@ export class ProjectDetailsComponent {
           console.log(err)
         }
       });
-    }else{
-      this.empService.updateEmployee(empData.value, this.recordId).subscribe({
+    }
+    else{
+      this.projectService.updateProject(projectData.value, this.recordId).subscribe({
         next: (data) => {
           if(data.message=="updated"){
-            this.getEmpRecord();
+            this.getProjectRecord();
             this.showMsg="Record Update Successfully";
-          }else if(data.message=="email find"){
-            this.showMsg="Email is already used";
-          }else if(data.message=="phone find"){
-            this.showMsg="Phone Number is already used";
           }
           setTimeout(() => {
             this.showMsg = "";
@@ -109,31 +94,27 @@ export class ProjectDetailsComponent {
 
 
 
-  @ViewChild('employeeData') myform!:NgForm;
+  @ViewChild('projectData') myform!:NgForm;
   recordId : any;
 
 
   editRecord(allData:any){
-    this.getRole();
-    this.myform.controls['FirstName'].setValue(allData.firstName);
-    this.myform.controls['LastName'].setValue(allData.lastName);
-    this.myform.controls['Email'].setValue(allData.email);
-    this.myform.controls['Phone'].setValue(allData.phone);
-    this.RoleId = allData.roleId;
-    this.myform.controls['Address'].setValue(allData.address);
+    this.myform.controls['ProjectName'].setValue(allData.projectName);
+    this.myform.controls['Description'].setValue(allData.description);
+    this.myform.controls['StartDate'].setValue(allData.startDate);
+    this.myform.controls['EndDate'].setValue(allData.endDate);
     this.btnText = "Update"
-    this.recordId = allData.empId;
+    this.recordId = allData.projectId;
     this.showMsg = "";
   }
 
 
   deleteRecord(userId: number): void {
     if(confirm("Are you sure want to delete this record")){
-      this.empService.deleteEmployee(userId)
-        .subscribe({
+      this.projectService.deleteProject(userId).subscribe({
           next: (data) => {
             if(data.message=="deleted"){
-              this.getEmpRecord();
+              this.getProjectRecord();
               this.showMsg="Record Deleted Successfully";
               setTimeout(() => {
                 this.showMsg = "";
@@ -143,7 +124,7 @@ export class ProjectDetailsComponent {
           error: (err) => {
             console.log(err)
           }
-        });
+      });
     }
   }
 
