@@ -18,24 +18,40 @@
     </div>
 
     <div class="table-responsive">
+        <h5 class="text-center">{{showMsg}}</h5>
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th><input type="checkbox"></th>
-                    <th>ID</th>
-                    <th>Title</th>
+                    <th>S.NO</th>
+                    <th>Role Name</th>
                     <th>Description</th>
-                    <th>Brand Logo</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td colspan="6" class="text-center">
-                        <img src="path_to_no_data_icon.png" alt="No Data" style="width: 50px;">
-                        <p>No records found</p>
-                    </td>
-                </tr>
+                @if(roles && roles.length > 0){
+                    @for(x of roles;track $index ){
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>{{$index+1}}</td>
+                            <td>{{x.roleName}}</td>
+                            <td>{{x.description}}</td>
+                            <td>
+                                <button class="btn edit-btn" title="Edit Record" (click)="editRecord(x)" data-toggle="modal" data-target="#role"><i class="fas fa-edit"></i></button>
+                                <button class="btn delete-btn" title="Delete Record" (click)="deleteRecord(x.roleId)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                            </td>
+                        </tr>
+                    }
+                }
+                @else{
+                    <tr>
+                        <td colspan="6" class="text-center">
+                            <img src="path_to_no_data_icon.png" alt="No Data" style="width: 50px;">
+                            <p>No records found</p>
+                        </td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>
@@ -64,13 +80,14 @@
             <form #roleData="ngForm" (ngSubmit)="saveRoles(roleData)">
                 <div class="form-row mb-2">
                     <label for="rolesName">Roles Name</label>
-                    <input type="text" class="form-control" ngModel id="rolesName" name="rolesName" placeholder="Roles">
+                    <input type="text" class="form-control" ngModel id="RoleName" name="RoleName" placeholder="Roles">
                 </div>
                 <div class="form-row mb-2">
                     <label for="description">Description</label>
-                    <input type="text" class="form-control" ngModel id="description" name="description" placeholder="Description">
+                    <input type="text" class="form-control" ngModel id="Description" name="Description" placeholder="Description">
                 </div>
-                <button type="submit" class="btn btn-primary">Save</button>
+                <h5 class="text-center">{{showMsg}}</h5>
+                <button type="submit" class="btn btn-primary">{{btnText}}</button>
             </form>
         </div>
       </div>

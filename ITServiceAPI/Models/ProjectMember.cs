@@ -17,7 +17,7 @@ public partial class ProjectMember
 
     public DateTime ModifyDate { get; set; }
 
-    public virtual Employee? Emp { get; set; }
+    public virtual User? Emp { get; set; }
 
     public virtual ProjectsModule? ProModule { get; set; }
 

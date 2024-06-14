@@ -23,11 +23,11 @@ public partial class Request
 
     public int? AssignedTo { get; set; }
 
-    public virtual Employee? AssignedToNavigation { get; set; }
+    public virtual User? AssignedToNavigation { get; set; }
 
     public virtual ProjectBranch? Branch { get; set; }
 
-    public virtual Employee? CreatedByNavigation { get; set; }
+    public virtual User? CreatedByNavigation { get; set; }
 
     public virtual ProjectsModule? ProModule { get; set; }
 

@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+.fa-edit{
+    color : #999900;
+}
+.fa-trash{
+    color : #b30000;
+}

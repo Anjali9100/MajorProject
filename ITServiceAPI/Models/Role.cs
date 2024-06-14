@@ -13,8 +13,6 @@ public partial class Role
 
     public DateTime ModifyDate { get; set; }
 
-    public virtual ICollection<Employee> Employees { get; set; } = new List<Employee>();
-
     public virtual ICollection<ProjectAction> ProjectActions { get; set; } = new List<ProjectAction>();
 
     public virtual ICollection<ProjectMember> ProjectMembers { get; set; } = new List<ProjectMember>();
@@ -22,4 +20,6 @@ public partial class Role
     public virtual ICollection<Project> Projects { get; set; } = new List<Project>();
 
     public virtual ICollection<ProjectsModule> ProjectsModules { get; set; } = new List<ProjectsModule>();
+
+    public virtual ICollection<User> Users { get; set; } = new List<User>();
 }
