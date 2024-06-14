@@ -295,3 +295,4 @@ FodyWeavers.xsd
 .paket/paket.exe
 paket-files/
 /ITServiceAPI/obj/Debug/net8.0/ITServiceAPI.AssemblyInfo.cs
+/ITServiceAPI/obj/Debug/net8.0/ITServiceAPI.AssemblyInfoInputs.cache
