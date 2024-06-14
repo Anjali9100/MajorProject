@@ -8,10 +8,9 @@ import { NgForm } from '@angular/forms';
   styleUrl: './project-details.component.css'
 })
 export class ProjectDetailsComponent {
-  formTitle: string = "Add Employee";
+  formTitle: string = "Add Project";
   btnText: string = "Save";
   projectRecord: any[] = [];  
-  originalEmpRecords: any[] = [];  
   showMsg: string = "";
 
 
@@ -21,13 +20,11 @@ export class ProjectDetailsComponent {
     this.getProjectRecord();
   }
 
-  
 
-  // openForm() {
-  //   this.myform.resetForm(); 
-  // }
+  openForm() {
+    this.myform.resetForm(); 
+  }
   
-
 
   getProjectRecord(): void {
     this.projectService.getProject()

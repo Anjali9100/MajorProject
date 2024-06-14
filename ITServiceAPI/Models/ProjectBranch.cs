@@ -7,8 +7,6 @@ public partial class ProjectBranch
 {
     public int BranchId { get; set; }
 
-    public int ProjectId { get; set; }
-
     public string BranchName { get; set; } = null!;
 
     public DateTime CreatedDate { get; set; }
@@ -16,8 +14,6 @@ public partial class ProjectBranch
     public bool IsActive { get; set; }
 
     public string? Description { get; set; }
-
-    public virtual Project Project { get; set; } = null!;
 
     public virtual ICollection<ProjectsModule> ProjectsModules { get; set; } = new List<ProjectsModule>();
 

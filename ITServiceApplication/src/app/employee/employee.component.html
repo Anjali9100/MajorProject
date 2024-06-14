@@ -105,7 +105,7 @@
                 <div class="form-group">
                     <label for="roles">Roles</label>
                     <select name="roleId" id="roles" class="form-control" ngModel>
-                        <option value="">Select Project</option>
+                        <option value="">Select Role</option>
                         @for(x of roles; track roles){
                             @if(x.roleName !="Admin"){
                                 <option [value]="x.roleId" [selected]="x.roleId === RoleId">{{ x.roleName }}</option>

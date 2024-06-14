@@ -46,13 +46,13 @@
         </a>
         <div [class.show]="isProjectSubmenuOpen" class="collapse">
           <a class="list-group-item list-group-item-action" [class.active]="activeItem === 5" routerLink="project-details">
-            <i class="bi bi-box-seam"></i> Projects
+            <i class="bi bi-box-seam"></i> Project Details
+          </a>
+          <a class="list-group-item list-group-item-action" [class.active]="activeItem === 5" routerLink="project-branch">
+            <i class="bi bi-box-seam"></i> Project Branch
           </a>
           <a class="list-group-item list-group-item-action" [class.active]="activeItem === 6" routerLink="project-module">
             <i class="bi bi-puzzle"></i> Project Modules
-          </a>
-          <a class="list-group-item list-group-item-action" [class.active]="activeItem === 5" routerLink="project-branch">
-            <i class="bi bi-box-seam"></i> Projects Branch
           </a>
           <a class="list-group-item list-group-item-action" [class.active]="activeItem === 7" routerLink="project-member">
             <i class="bi bi-people"></i> Project Members

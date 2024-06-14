@@ -37,4 +37,7 @@ export class ProjectService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete<any>(url);
   }
+
+
+  
 }

@@ -101,12 +101,6 @@ public partial class ItserviceContext : DbContext
                 .HasColumnType("datetime");
             entity.Property(e => e.Description).HasColumnType("text");
             entity.Property(e => e.IsActive).HasDefaultValue(true);
-            entity.Property(e => e.ProjectId).HasColumnName("ProjectID");
-
-            entity.HasOne(d => d.Project).WithMany(p => p.ProjectBranches)
-                .HasForeignKey(d => d.ProjectId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__ProjectBr__Proje__5BE2A6F2");
         });
 
         modelBuilder.Entity<ProjectMember>(entity =>

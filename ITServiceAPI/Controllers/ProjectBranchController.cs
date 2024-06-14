@@ -59,30 +59,24 @@ namespace ITServiceAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProjectBranch(int id, ProjectBranch projectBranch)
         {
-            if (id != projectBranch.BranchId)
+            var record = await _context.ProjectBranches.FindAsync(id);
+            if (record == null)
             {
-                return Ok(new {message="not found"});
+                return Ok(new { message = "not found" });
             }
-
-            _context.Entry(projectBranch).State = EntityState.Modified;
 
             try
             {
+                record.BranchName = projectBranch.BranchName;
+                record.Description = projectBranch.Description;
                 await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ProjectBranchExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
 
-            return NoContent();
+                return Ok(new { message = "updated" });
+            }
+            catch (Exception exp)
+            {
+                return Ok(exp);
+            }
         }
 
 
