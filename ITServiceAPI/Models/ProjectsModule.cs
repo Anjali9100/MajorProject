@@ -29,7 +29,7 @@ public partial class ProjectsModule
 
     public virtual ProjectBranch? Branch { get; set; }
 
-    public virtual Employee? Emp { get; set; }
+    public virtual User? Emp { get; set; }
 
     public virtual Project? Project { get; set; }
 

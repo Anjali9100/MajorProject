@@ -37,6 +37,8 @@ namespace ITServiceAPI.Controllers
             return role;
         }
 
+
+
         // POST: api/Roles
         [HttpPost]
         public async Task<ActionResult<Role>> InsertRole(Role role)
@@ -53,30 +55,24 @@ namespace ITServiceAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateRole(int id, Role role)
         {
-            if (id != role.RoleId)
+            var record = await _context.Roles.FindAsync(id);
+            if (record == null)
             {
                 return Ok(new { message = "not found" });
             }
 
-            _context.Entry(role).State = EntityState.Modified;
+            record.RoleName = role.RoleName;
+            record.Description = role.Description;
 
             try
             {
                 await _context.SaveChangesAsync();
+                return Ok(new { message = "updated" });
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception ex)
             {
-                if (!RoleExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return Ok(ex);
             }
-
-            return NoContent();
         }
 
 

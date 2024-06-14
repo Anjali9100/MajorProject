@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ITServiceAPI.Models;
 
-public partial class Employee
+public partial class User
 {
     public int EmpId { get; set; }
 
@@ -13,19 +13,21 @@ public partial class Employee
 
     public string Email { get; set; } = null!;
 
-    public long Phone { get; set; }
+    public long? Phone { get; set; }
 
-    public string Address { get; set; } = null!;
-
-    public string EmpRegistrationId { get; set; } = null!;
+    public string? Address { get; set; }
 
     public int? RoleId { get; set; }
 
     public bool? IsActive { get; set; }
 
-    public byte[] LastUpdated { get; set; } = null!;
+    public DateTime? ModifyDate { get; set; }
 
-    public DateTime ModifyDate { get; set; }
+    public DateTime? LastUpdated { get; set; }
+
+    public string? Keys { get; set; }
+
+    public string? Password { get; set; }
 
     public virtual ICollection<ProjectAction> ProjectActions { get; set; } = new List<ProjectAction>();
 

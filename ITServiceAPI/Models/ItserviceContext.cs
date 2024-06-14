@@ -15,8 +15,6 @@ public partial class ItserviceContext : DbContext
     {
     }
 
-    public virtual DbSet<Employee> Employees { get; set; }
-
     public virtual DbSet<Project> Projects { get; set; }
 
     public virtual DbSet<ProjectAction> ProjectActions { get; set; }
@@ -31,45 +29,14 @@ public partial class ItserviceContext : DbContext
 
     public virtual DbSet<Role> Roles { get; set; }
 
+    public virtual DbSet<User> Users { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Data Source=DESKTOP-6G6I50O\\SQLEXPRESS; Initial Catalog=ITService; Integrated Security=True; TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Employee>(entity =>
-        {
-            entity.HasKey(e => e.EmpId).HasName("PK__Employee__AF2DBA792AE9D470");
-
-            entity.Property(e => e.EmpId).HasColumnName("EmpID");
-            entity.Property(e => e.Address)
-                .HasMaxLength(200)
-                .IsUnicode(false);
-            entity.Property(e => e.Email)
-                .HasMaxLength(100)
-                .IsUnicode(false);
-            entity.Property(e => e.EmpRegistrationId)
-                .HasMaxLength(60)
-                .IsUnicode(false);
-            entity.Property(e => e.FirstName)
-                .HasMaxLength(100)
-                .IsUnicode(false);
-            entity.Property(e => e.LastName)
-                .HasMaxLength(100)
-                .IsUnicode(false);
-            entity.Property(e => e.LastUpdated)
-                .IsRowVersion()
-                .IsConcurrencyToken();
-            entity.Property(e => e.ModifyDate)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime");
-            entity.Property(e => e.RoleId).HasColumnName("RoleID");
-
-            entity.HasOne(d => d.Role).WithMany(p => p.Employees)
-                .HasForeignKey(d => d.RoleId)
-                .HasConstraintName("FK__Employees__RoleI__5165187F");
-        });
-
         modelBuilder.Entity<Project>(entity =>
         {
             entity.HasKey(e => e.ProjectId).HasName("PK__Projects__761ABED08CFADE2B");
@@ -246,6 +213,45 @@ public partial class ItserviceContext : DbContext
             entity.Property(e => e.RoleName)
                 .HasMaxLength(100)
                 .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.HasKey(e => e.EmpId).HasName("PK__Employee__AF2DBA792AE9D470");
+
+            entity.ToTable("users");
+
+            entity.Property(e => e.EmpId).HasColumnName("EmpID");
+            entity.Property(e => e.Address)
+                .HasMaxLength(200)
+                .IsUnicode(false);
+            entity.Property(e => e.Email)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.FirstName)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.Keys)
+                .HasMaxLength(200)
+                .IsUnicode(false)
+                .HasColumnName("keys");
+            entity.Property(e => e.LastName)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.LastUpdated)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.ModifyDate)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.Password)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.RoleId).HasColumnName("RoleID");
+
+            entity.HasOne(d => d.Role).WithMany(p => p.Users)
+                .HasForeignKey(d => d.RoleId)
+                .HasConstraintName("FK__Employees__RoleI__5165187F");
         });
 
         OnModelCreatingPartial(modelBuilder);
