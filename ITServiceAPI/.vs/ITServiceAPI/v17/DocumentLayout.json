@@ -62,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -87,19 +87,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ItserviceContext.cs",
-              "DocumentMoniker": "D:\\Spektra---Training-Assignment\\MajorProject\\ITServiceAPI\\Models\\ItserviceContext.cs",
-              "RelativeDocumentMoniker": "Models\\ItserviceContext.cs",
-              "ToolTip": "D:\\Spektra---Training-Assignment\\MajorProject\\ITServiceAPI\\Models\\ItserviceContext.cs",
-              "RelativeToolTip": "Models\\ItserviceContext.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAA5wB8AAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T06:27:23.187Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -146,11 +133,24 @@
               "Title": "ProjectController.cs",
               "DocumentMoniker": "D:\\Spektra---Training-Assignment\\MajorProject\\ITServiceAPI\\Controllers\\ProjectController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProjectController.cs",
-              "ToolTip": "D:\\Spektra---Training-Assignment\\MajorProject\\ITServiceAPI\\Controllers\\ProjectController.cs*",
-              "RelativeToolTip": "Controllers\\ProjectController.cs*",
-              "ViewState": "AQIAABoAAAAAAAAAAAAgwCgAAABAAAAA",
+              "ToolTip": "D:\\Spektra---Training-Assignment\\MajorProject\\ITServiceAPI\\Controllers\\ProjectController.cs",
+              "RelativeToolTip": "Controllers\\ProjectController.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAQwDYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-14T04:21:44.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ItserviceContext.cs",
+              "DocumentMoniker": "D:\\Spektra---Training-Assignment\\MajorProject\\ITServiceAPI\\Models\\ItserviceContext.cs",
+              "RelativeDocumentMoniker": "Models\\ItserviceContext.cs",
+              "ToolTip": "D:\\Spektra---Training-Assignment\\MajorProject\\ITServiceAPI\\Models\\ItserviceContext.cs",
+              "RelativeToolTip": "Models\\ItserviceContext.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAA5wB8AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T06:27:23.187Z",
               "EditorCaption": ""
             },
             {
@@ -228,7 +228,8 @@
               "RelativeToolTip": "Models\\ProjectsModule.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T10:58:17.127Z"
+              "WhenOpened": "2024-06-14T10:58:17.127Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -240,7 +241,8 @@
               "RelativeToolTip": "Models\\ProjectBranch.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAUwBUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T06:37:37.291Z"
+              "WhenOpened": "2024-06-14T06:37:37.291Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -252,7 +254,8 @@
               "RelativeToolTip": "Models\\Project.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T03:32:03.821Z"
+              "WhenOpened": "2024-06-14T03:32:03.821Z",
+              "EditorCaption": ""
             }
           ]
         }
