@@ -22,6 +22,15 @@ export class ProjectService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
+
+  getProjectByRole(empRoleId:any):Observable<any>{
+    return this.http.get<any>(`${'https://localhost:7071/api/Projects/getProjectByUserID'}/${empRoleId}`);
+  }
+
+
+  getProjectCount():Observable<any>{
+    return this.http.get<any>('https://localhost:7071/api/Projects/getProjectCount');
+  }
   
 
   updateProject(empData: any, userId: any): Observable<any> {
@@ -37,4 +46,7 @@ export class ProjectService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete<any>(url);
   }
+
+
+  
 }

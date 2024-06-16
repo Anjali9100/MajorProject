@@ -8,6 +8,7 @@ import { ProjectMemberComponent } from './project-member/project-member.componen
 import { ProjectModuleComponent } from './project-module/project-module.component';
 import { RolesComponent } from './roles/roles.component';
 import { CreateRequestComponent } from './create-request/create-request.component';
+import { ProfleComponent } from './profle/profle.component';
 
 const routes: Routes = [
   {path:"employee", component:EmployeeComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: "project-member", component:ProjectMemberComponent},
   {path: "project-module", component:ProjectModuleComponent},
   {path: "roles", component:RolesComponent},
-  {path: "create-request", component:CreateRequestComponent}
+  {path: "create-request", component:CreateRequestComponent},
+  {path:"Profile",component:ProfleComponent}
 ];
 
 @NgModule({

@@ -18,24 +18,28 @@ namespace ITServiceAPI.Controllers
 
         // GET: api/ProjectsModules
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProjectsModule>>> GetProjectsModules()
+        public async Task<ActionResult<IEnumerable<ProjectsModule>>> GetProjectsModulesView()
         {
-            return await _context.ProjectsModules.ToListAsync();
+            var record = await _context.ProjectModuleViews.ToListAsync();
+            return Ok(record);
         }
 
-        // GET: api/ProjectsModules/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ProjectsModule>> GetProjectsModule(int id)
-        {
-            var projectsModule = await _context.ProjectsModules.FirstOrDefaultAsync(pm => pm.ProModuleId == id);
 
-            if (projectsModule == null)
+
+        [HttpGet("getModuleBasedOnProject/{id}")]
+        public async Task<ActionResult<ProjectBranch>> GetProjectModule(int id)
+        {
+            var projectModule = await _context.ProjectsModules.Where(pm => pm.ProjectId == id).ToListAsync();
+
+            if (projectModule == null)
             {
-                return Ok(new {message="not found"});
+                return Ok(new { message = "not found" });
             }
 
-            return projectsModule;
+            return Ok(projectModule);
         }
+
+
 
         // POST: api/ProjectsModules
         [HttpPost]
@@ -51,31 +55,28 @@ namespace ITServiceAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProjectsModule(int id, ProjectsModule projectsModule)
         {
-            if (id != projectsModule.ProModuleId)
+            var record = await _context.ProjectsModules.FindAsync(id);
+            if (record == null)
             {
                 return Ok(new { message = "not found" });
             }
 
-            _context.Entry(projectsModule).State = EntityState.Modified;
-
             try
             {
+                record.ModuleName = projectsModule.ModuleName;
+                record.Description = projectsModule.Description;
+                record.ProjectId = projectsModule.ProjectId;
+                record.BranchId = projectsModule.BranchId;
+                record.StartDate = projectsModule.StartDate;
+                record.EndDate = projectsModule.EndDate;
                 await _context.SaveChangesAsync();
 
+                return Ok(new { message = "updated" });
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception exp)
             {
-                if (!ProjectsModuleExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return Ok(exp);
             }
-
-            return NoContent();
         }
 
 
@@ -93,7 +94,7 @@ namespace ITServiceAPI.Controllers
             _context.ProjectsModules.Remove(projectsModule);
             await _context.SaveChangesAsync();
 
-            return Ok(new { message = "save" });
+            return Ok(new { message = "deleted" });
         }
 
 

@@ -15,21 +15,17 @@ public partial class ProjectsModule
 
     public int? ProjectId { get; set; }
 
-    public int? EmpId { get; set; }
-
     public int? RoleId { get; set; }
 
     public int? BranchId { get; set; }
 
-    public DateOnly StartDate { get; set; }
-
-    public DateOnly EndDate { get; set; }
-
     public DateTime ModifyDate { get; set; }
 
-    public virtual ProjectBranch? Branch { get; set; }
+    public DateOnly? EndDate { get; set; }
 
-    public virtual User? Emp { get; set; }
+    public DateOnly? StartDate { get; set; }
+
+    public virtual ProjectBranch? Branch { get; set; }
 
     public virtual Project? Project { get; set; }
 

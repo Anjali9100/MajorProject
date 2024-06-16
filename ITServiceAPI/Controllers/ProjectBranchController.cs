@@ -22,23 +22,24 @@ namespace ITServiceAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProjectBranch>>> GetProjectBranches()
         {
-            return await _context.ProjectBranches.ToListAsync();
+            var record =  await _context.ProjectBranchDetails.ToListAsync();
+            return Ok(record);
         }
 
 
 
         // GET: api/ProjectBranches/5
-        [HttpGet("{id}")]
+        [HttpGet("getBranchBasedOnProject/{id}")]
         public async Task<ActionResult<ProjectBranch>> GetProjectBranch(int id)
         {
-            var projectBranch = await _context.ProjectBranches.FirstOrDefaultAsync(pb => pb.BranchId == id);
+            var projectBranches = await _context.ProjectBranches.Where(pb => pb.ProjectId == id).ToListAsync();
 
-            if (projectBranch == null)
+            if (projectBranches == null)
             {
                 return Ok(new { message = "not found" });
             }
 
-            return projectBranch;
+            return Ok(projectBranches);
         }
 
 
@@ -59,30 +60,24 @@ namespace ITServiceAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProjectBranch(int id, ProjectBranch projectBranch)
         {
-            if (id != projectBranch.BranchId)
+            var record = await _context.ProjectBranches.FindAsync(id);
+            if (record == null)
             {
-                return Ok(new {message="not found"});
+                return Ok(new { message = "not found" });
             }
-
-            _context.Entry(projectBranch).State = EntityState.Modified;
 
             try
             {
+                record.BranchName = projectBranch.BranchName;
+                record.Description = projectBranch.Description;
                 await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ProjectBranchExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
 
-            return NoContent();
+                return Ok(new { message = "updated" });
+            }
+            catch (Exception exp)
+            {
+                return Ok(exp);
+            }
         }
 
 

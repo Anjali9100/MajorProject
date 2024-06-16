@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { ProjectService } from '../services/project.service';
 import { NgForm } from '@angular/forms';
+import { EmployeeService } from '../services/employee.service';
 
 @Component({
   selector: 'app-project-details',
@@ -8,26 +9,43 @@ import { NgForm } from '@angular/forms';
   styleUrl: './project-details.component.css'
 })
 export class ProjectDetailsComponent {
-  formTitle: string = "Add Employee";
+  formTitle: string = "Add Project";
   btnText: string = "Save";
   projectRecord: any[] = [];  
-  originalEmpRecords: any[] = [];  
   showMsg: string = "";
+  managerRecord:any;
+  empId:any;
 
 
-  constructor(private projectService:ProjectService){}
+  constructor(private projectService:ProjectService, private empService:EmployeeService){
+    this.getManagerOrTeamLeadRecord();
+  }
 
   ngOnInit(): void {
     this.getProjectRecord();
+    
   }
 
-  
 
-  // openForm() {
-  //   this.myform.resetForm(); 
-  // }
-  
+  openForm() {
+    this.myform.resetForm(); 
+    this.btnText= "Save";
+  }
 
+
+  getManagerOrTeamLeadRecord(){
+    this.empService.getManagerOrTeamLeadRecord()
+     .subscribe({
+        next: (data) => {
+          this.managerRecord = data
+          console.log(data);
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
+  }
+  
 
   getProjectRecord(): void {
     this.projectService.getProject()
@@ -101,6 +119,7 @@ export class ProjectDetailsComponent {
   editRecord(allData:any){
     this.myform.controls['ProjectName'].setValue(allData.projectName);
     this.myform.controls['Description'].setValue(allData.description);
+    this.empId = allData.empId;
     this.myform.controls['StartDate'].setValue(allData.startDate);
     this.myform.controls['EndDate'].setValue(allData.endDate);
     this.btnText = "Update"

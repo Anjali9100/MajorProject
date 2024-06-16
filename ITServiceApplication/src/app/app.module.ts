@@ -13,6 +13,9 @@ import { CreateRequestComponent } from './create-request/create-request.componen
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfleComponent } from './profle/profle.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { HttpClientModule } from '@angular/common/http';
     ProjectMemberComponent,
     ProjectBranchComponent,
     CreateRequestComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProfleComponent,
+    SignUpComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
