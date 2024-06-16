@@ -1,8 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import "@aws-amplify/ui/dist/styles.css";
 
-.fa-edit{
-    color : #999900;
+.fa-edit {
+  color: #999900;
 }
-.fa-trash{
-    color : #b30000;
+.fa-trash {
+  color: #b30000;
 }

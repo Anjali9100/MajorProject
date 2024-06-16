@@ -60,13 +60,33 @@
         </div>
       </div>
 
-      <a class="list-group-item list-group-item-action" [class.active]="activeItem === 7" routerLink="create-request">
-        <i class="bi bi-people"></i> Create Requests 
-      </a>
-
+        <a
+          class="list-group-item list-group-item-action"
+          [class.active]="activeItem === 7"
+          routerLink="create-request"
+        >
+          <i class="bi bi-people"></i> Create Requests
+        </a>
+      </div>
+    </div>
+    <div id="page-content-wrapper">
+      <router-outlet></router-outlet>
     </div>
   </div>
-  <div id="page-content-wrapper">
-    <router-outlet></router-outlet>
-  </div>
-</div>
+</ng-container>
+<ng-container *ngIf="!isUserLoggedIn">
+  <amplify-authenticator
+    [formFields]="formFields"
+    [loginMechanisms]="['email']"
+    [signUpAttributes]="['name', 'phone_number']"
+  >
+    <ng-template
+      amplifySlot="authenticated"
+      let-user="user"
+      let-signOut="signOut"
+    >
+      <h1>Welcome {{ user.username }}!</h1>
+      <button (click)="signOut()">Sign Out</button>
+    </ng-template>
+  </amplify-authenticator>
+</ng-container>
