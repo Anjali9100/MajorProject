@@ -12,31 +12,53 @@
                 <div class="input-group" style="flex-grow: 1; min-width: 250px; max-width: 60%;">
                     <input type="text" class="form-control" placeholder="Search Brands" aria-label="Search Brands">
                 </div>
-                <button class="btn btn-primary ml-2">Create Module</button>
+                <button class="btn btn-primary ml-2" (click)="openForm()" data-toggle="modal"  data-target="#projectModule">Create Module</button>
             </div>
         </div>
     </div>
 
     <div class="table-responsive">
+        <h5 class="text-center">{{showMsg}}</h5>
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th><input type="checkbox"></th>
                     <th>ID</th>
-                    <th>Title</th>
+                    <th>Project Name</th>
+                    <th>Branch Name</th>
+                    <th>Module Name</th>
                     <th>Description</th>
-                    <th>Brand Logo</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Display when no records are found -->
-                <tr>
-                    <td colspan="6" class="text-center">
-                        <img src="path_to_no_data_icon.png" alt="No Data" style="width: 50px;">
-                        <p>No records found</p>
-                    </td>
-                </tr>
+                @if(moduleRecord && moduleRecord.length>0){
+                    @for (item of moduleRecord; track $index) {
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>{{$index+1}}</td>
+                            <td>{{item.projectName}}</td>
+                            <td>{{item.branchName}}</td>
+                            <td>{{item.moduleName}}</td>
+                            <td>{{item.moduleDescription}}</td>
+                            <td>{{item.moduleStartDate}}</td>
+                            <td>{{item.moduleEndDate}}</td>
+                            <td>
+                                <button class="btn edit-btn" data-toggle="modal"  data-target="#projectModule" title="Edit Record" (click)="editRecord(item)" ><i class="fas fa-edit"></i></button>
+                                <button class="btn delete-btn" title="Delete Record" (click)="deleteRecord(item.proModuleId)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                            </td>
+                        </tr>
+                    }
+                }@else {
+                    <tr>
+                        <td colspan="6" class="text-center">
+                            <img src="path_to_no_data_icon.png" alt="No Data" style="width: 50px;">
+                            <p>No records found</p>
+                        </td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>
@@ -49,4 +71,58 @@
             <li class="page-item"><a class="page-link" href="#">Next</a></li>
         </ul>
     </nav>
+</div>
+
+
+
+
+<div class="modal fade" id="projectModule" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Product Module</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form #moduleData="ngForm" (ngSubmit)="saveProjectModuleRecord(moduleData)">
+                <div class="form-group">
+                    <label for="projectId">Select Project:</label>
+                    <select [(ngModel)]="selectedProjectId" (change)="onProjectChange()" id="projectId" name="projectId" class="form-control">
+                        <option [value]="null">Select Project</option>
+                        <option *ngFor="let x of project" [value]="x.projectId">{{ x.projectName }}</option>
+                    </select>
+                </div>
+                <div class="form-group" >
+                    <label for="branchId">Select Branch:</label>
+                    <select name="branchId" id="branchId" class="form-control" ngModel>
+                        <option [value]="null">Select Branch</option>
+                        <option *ngFor="let x of branch" [value]="x.branchId">{{x.branchName}}</option>  
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ModuleName">Module Name</label>
+                    <input type="text" class="form-control" ngModel id="ModuleName" name="ModuleName" placeholder="Project Name">
+                </div>
+                <div class="form-group">
+                    <label for="Description">Description</label>
+                    <input type="text" class="form-control" ngModel id="Description" name="Description" placeholder="Project Description">
+                </div>
+
+                <div class="form-group">
+                    <label for="StartDate">Start Date</label>
+                      <input type="date" class="form-control" ngModel id="StartDate" name="StartDate" placeholder="Start Date">
+                </div>
+                <div class="form-group">
+                    <label for="EndDate">Expected End Date</label>
+                      <input type="date" class="form-control" ngModel id="EndDate" name="EndDate" placeholder="Expected End Date">
+                </div>
+                
+                <h5 class="text-center">{{showMsg}}</h5>
+                <button type="submit" class="btn btn-primary">{{btnText}}</button>
+            </form>
+        </div>
+      </div>
+    </div>
 </div>

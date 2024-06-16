@@ -20,7 +20,26 @@ namespace ITServiceAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Project>>> GetProjects()
         {
-            return await _context.Projects.ToListAsync();
+            var record = await _context.ViewProjectDetails.ToListAsync();
+            return Ok(record);
+        }
+
+
+
+        [HttpGet("getProjectByUserID/{rolesId}")]
+        public async Task<ActionResult<IEnumerable<Project>>> GetProjectsById(int rolesId)
+        {
+            var record = await _context.ViewProjectDetails.Where(p=>p.EmpId== rolesId).ToListAsync();
+            return Ok(record);
+        }
+
+
+
+        [HttpGet("getProjectCount")]
+        public async Task<ActionResult<IEnumerable<Project>>> GetProjectsCount(int rolesId)
+        {
+            var record = await _context.ViewManagerProjectCounts.ToListAsync();
+            return Ok(record);
         }
 
 
@@ -50,6 +69,7 @@ namespace ITServiceAPI.Controllers
             {
                 record.ProjectName = project.ProjectName;
                 record.Description = project.Description;
+                record.EmpId = project.EmpId;
                 record.StartDate = project.StartDate;
                 record.EndDate = project.EndDate;
                 await _context.SaveChangesAsync();

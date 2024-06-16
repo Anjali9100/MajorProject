@@ -20,7 +20,8 @@ namespace ITServiceAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Request>>> GetRequests()
         {
-            return await _context.Requests.ToListAsync();
+            var record = await _context.ViewRequestDetails.ToListAsync();
+            return Ok(record);
         }
 
         // GET: api/Requests/5
@@ -51,30 +52,27 @@ namespace ITServiceAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateRequest(int id, Request request)
         {
-            if (id != request.RequestId)
+            var record = await _context.Requests.FindAsync(id);
+            if (record == null)
             {
                 return Ok(new { message = "not found" });
             }
 
-            _context.Entry(request).State = EntityState.Modified;
-
             try
             {
+                record.ProjectId = request.ProjectId;
+                record.Description = request.Description;
+                record.CreatedBy = request.CreatedBy;
+                record.AssignedTo = request.AssignedTo;
                 await _context.SaveChangesAsync();
+
+                return Ok(new { message = "updated" });
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception exp)
             {
-                if (!RequestExists(id))
-                {
-                    return Ok(new { message = "not found" });
-                }
-                else
-                {
-                    throw;
-                }
+                return Ok(exp);
             }
 
-            return NoContent();
         }
 
         // DELETE: api/Requests/5

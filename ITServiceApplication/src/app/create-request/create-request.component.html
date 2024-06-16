@@ -1,7 +1,7 @@
 <div class="container-fluid mt-3">
     <div class="row">
         <div class="col-md-3">
-            <h5>Manage Employee</h5>
+            <h5>Manage Request</h5>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a routerLink="/dashboard">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Manage Requests</li>
@@ -12,31 +12,56 @@
                 <div class="input-group" style="flex-grow: 1; min-width: 250px; max-width: 60%;">
                     <input type="text" class="form-control" placeholder="Search Brands" aria-label="Search Brands">
                 </div>
-                <button class="btn btn-primary ml-2">Create Request</button>
+                <button class="btn btn-primary ml-2" data-toggle="modal" data-target="#requestModel">Create Request</button>
             </div>
         </div>
     </div>
 
     <div class="table-responsive">
+        <h5 class="text-center">{{showMsg}}</h5>
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th><input type="checkbox"></th>
-                    <th>ID</th>
-                    <th>Title</th>
+                    <th>S.NO</th>
+                    <th>Project Name</th>
                     <th>Description</th>
-                    <th>Brand Logo</th>
+                    <th>Request Created By</th>
+                    <th>Status</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Display when no records are found -->
-                <tr>
-                    <td colspan="6" class="text-center">
-                        <img src="path_to_no_data_icon.png" alt="No Data" style="width: 50px;">
-                        <p>No records found</p>
-                    </td>
-                </tr>
+                @if(requestRecord && requestRecord.length>0){
+                    @for(x of requestRecord; track $index){
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>{{$index + 1}}</td>
+                            <td>{{x.projectName}}</td>
+                            <td>{{x.requestDescription}}</td>
+                            <td>{{x.createdByName}}</td>
+                            <td>
+                                @if(x.status==0){
+                                    <button class="btn btn-warning p-1">Pending</button>
+                                }
+                                @else {
+                                    <button class="btn btn-warning">Pending</button>
+                                }
+                            </td>
+                            <td>
+                                <button class="btn edit-btn" data-toggle="modal" data-target="#requestModel" title="Edit Record" (click)="editRecord(x)" ><i class="fas fa-edit"></i></button>
+                                <button class="btn delete-btn" title="Delete Record" (click)="deleteRecord(x.requestId)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                            </td>
+                        </tr>
+                    }
+                }@else{
+                    <tr>
+                        <td colspan="7" class="text-center">
+                            <img src="path_to_no_data_icon.png" alt="No Data" style="width: 50px;">
+                            <p>No records found</p>
+                        </td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>
@@ -50,3 +75,55 @@
         </ul>
     </nav>
 </div>
+
+
+
+
+<div class="modal fade" id="requestModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create Requests</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form #requestData="ngForm" (ngSubmit)="saveProjectRequest(requestData)">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="AssignedTo">Manager/Team Lead</label>
+                        <select (change)="onManagerRoleChange()" [(ngModel)]="selectManagerId" id="AssignedTo" name="AssignedTo" class="form-control">
+                            <option [value]="null">Select Manager</option>
+                            <option *ngFor="let x of managerRecord" [value]="x.empId" [selected]="x.empId==RoleId">{{ x.firstName + ' ' + x.lastName }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="ProjectID">Project</label>
+                        <select ngModel id="ProjectID" name="ProjectID" class="form-control">
+                            <option [value]="null">Select Project</option>
+                            <option *ngFor="let x of project" [value]="x.projectId" [selected]="x.projectId==ProjectID ">{{ x.projectName }}</option>
+                            <option *ngIf="!project?.length" disabled>No Record Found</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Description">Description</label>
+                    <input type="text" class="form-control" ngModel id="Description" name="Description" placeholder="Project Description">
+                </div>
+                <div class="form-group">
+                    <label for="CreatedBy">Employee</label>
+                    <select id="CreatedBy" name="CreatedBy" class="form-control" ngModel>
+                        <option value="">Select Employee</option>
+                        <option *ngFor="let x of employeeRecord" [value]="x.empId" [selected]="x.empId==EmployeeId " >{{ x.firstName + ' ' + x.lastName }}</option>
+                    </select>
+                </div>
+                <!-- <input type="hidden" name="CreatedBy" ngModel [value]="loginId"> -->
+                <h5 class="text-center">{{showMsg}}</h5>
+                <button type="submit" class="btn btn-primary">{{btnText}}</button>
+            </form>
+            
+        </div>
+      </div>
+  </div>
+

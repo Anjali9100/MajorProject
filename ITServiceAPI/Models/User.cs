@@ -35,8 +35,6 @@ public partial class User
 
     public virtual ICollection<Project> Projects { get; set; } = new List<Project>();
 
-    public virtual ICollection<ProjectsModule> ProjectsModules { get; set; } = new List<ProjectsModule>();
-
     public virtual ICollection<Request> RequestAssignedToNavigations { get; set; } = new List<Request>();
 
     public virtual ICollection<Request> RequestCreatedByNavigations { get; set; } = new List<Request>();

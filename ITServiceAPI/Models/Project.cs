@@ -27,6 +27,8 @@ public partial class Project
 
     public virtual ICollection<ProjectAction> ProjectActions { get; set; } = new List<ProjectAction>();
 
+    public virtual ICollection<ProjectBranch> ProjectBranches { get; set; } = new List<ProjectBranch>();
+
     public virtual ICollection<ProjectMember> ProjectMembers { get; set; } = new List<ProjectMember>();
 
     public virtual ICollection<ProjectsModule> ProjectsModules { get; set; } = new List<ProjectsModule>();

@@ -18,10 +18,20 @@ export class EmployeeService {
   }
 
   // Read Role
-  getEmployee(): Observable<any[]> {
+  getAllRecord(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
 
+
+  getManagerOrTeamLeadRecord(): Observable<any[]> {
+    return this.http.get<any[]>('https://localhost:7071/api/User/GetManagerOrTeamLead');
+  }
+
+
+
+  getEmployeeOnly(): Observable<any[]> {
+    return this.http.get<any[]>('https://localhost:7071/api/User/GetEmployeeRecord');
+  }
 
 
   // Read Single Role

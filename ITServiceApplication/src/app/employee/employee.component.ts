@@ -42,7 +42,7 @@ export class EmployeeComponent {
 
 
   getEmpRecord(): void {
-    this.empService.getEmployee()
+    this.empService.getAllRecord()
       .subscribe({
         next: (data) => this.empRecord = data,
         error: (err) => {

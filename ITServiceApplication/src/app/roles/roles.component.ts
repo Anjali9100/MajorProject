@@ -28,6 +28,11 @@ export class RolesComponent {
         }
       });
   }
+
+  openForm() {
+    this.myform.resetForm(); 
+    this.btnText= "Save";
+  }
   
 
   saveRoles(roleData: any) {

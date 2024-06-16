@@ -14,6 +14,7 @@ export class ProjectBranchComponent {
   project:any;
   branchRecord: any[] = [];  
   showMsg: string = "";
+  ProjectID:any;
 
 
   constructor(private branchService:ProjectBranchService, private projectService:ProjectService){}
@@ -22,6 +23,12 @@ export class ProjectBranchComponent {
     this.getBranchRecord();
   }
 
+  
+  openForm() {
+    this.getProject();
+    this.myform.resetForm(); 
+  }
+  
   getProject(): void {
     this.projectService.getProject().subscribe({
         next: (data) => {
@@ -33,18 +40,15 @@ export class ProjectBranchComponent {
     });
   }
 
-  openForm() {
-    this.getProject();
-    this.myform.resetForm(); 
-  }
-  
-
 
 
   getBranchRecord(): void {
     this.branchService.getBranchRecord()
       .subscribe({
-        next: (data) => this.branchRecord = data,
+        next: (data) => {
+          console.log(data);
+          this.branchRecord = data
+        },
         error: (err) => {
           console.log(err);
         }
@@ -111,8 +115,9 @@ export class ProjectBranchComponent {
 
 
   editRecord(allData:any){
+    this.ProjectID = allData.projectId;
     this.myform.controls['BranchName'].setValue(allData.branchName);
-    this.myform.controls['Description'].setValue(allData.description);
+    this.myform.controls['Description'].setValue(allData.branchDescription);
     this.btnText = "Update"
     this.recordId = allData.branchId;
     this.showMsg = "";
@@ -120,9 +125,11 @@ export class ProjectBranchComponent {
 
 
   deleteRecord(bId: number): void {
+    console.log(bId);
     if(confirm("Are you sure want to delete this record")){
       this.branchService.deleteBranch(bId).subscribe({
           next: (data) => {
+            console.log(data)
             if(data.message=="deleted"){
               this.getBranchRecord();
               this.showMsg="Record Deleted Successfully";

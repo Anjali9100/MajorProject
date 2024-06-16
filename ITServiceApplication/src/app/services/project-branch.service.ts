@@ -24,6 +24,11 @@ export class ProjectBranchService {
 
   
 
+  getBranchBasedOnPro(projectId:any): Observable<any[]> {
+    return this.http.get<any[]>(`${'https://localhost:7071/api/ProjectBranches/getBranchBasedOnProject'}/${projectId}`);
+  }
+
+
   updateBranch(branchData: any, branchId: any): Observable<any> {
     const url = `${this.apiUrl}/${branchId}`;
     return this.http.put(url, branchData);

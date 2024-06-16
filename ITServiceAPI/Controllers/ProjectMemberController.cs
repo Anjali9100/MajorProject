@@ -22,7 +22,8 @@ namespace ITServiceAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProjectMember>>> GetProjectMembers()
         {
-            return await _context.ProjectMembers.ToListAsync();
+            var record = await _context.ViewProjectMemberDetails.ToListAsync();
+            return Ok(record);
         }
 
 
@@ -60,31 +61,59 @@ namespace ITServiceAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProjectMember(int id, ProjectMember projectMember)
         {
-            if (id != projectMember.ProjectMemberId)
+            var record = await _context.ProjectMembers.FindAsync(id);
+            if (record == null)
             {
                 return Ok(new { message = "not found" });
             }
 
-            _context.Entry(projectMember).State = EntityState.Modified;
+            try
+            {
+                record.RoleId = projectMember.RoleId;
+                record.ProjectId = projectMember.ProjectId;
+                record.BranchId = projectMember.BranchId;
+                record.ProModuleId = projectMember.ProModuleId;
+                record.EmpId = projectMember.EmpId;
+                await _context.SaveChangesAsync();
+
+                return Ok(new { message = "updated" });
+            }
+            catch (Exception exp)
+            {
+                return Ok(exp);
+            }
+        }
+
+
+
+
+
+        [HttpPut("updateStatus/{projectMemberID}")]
+        public async Task<IActionResult> UpdateProjectMemberStatus(int projectMemberID, ProjectMember projectMember)
+        {
+            var record = await _context.ProjectMembers.FindAsync(projectMemberID);
+            if (record == null)
+            {
+                return Ok(new { message = "not found" });
+            }
 
             try
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ProjectMemberExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+                record.Status = projectMember.Status;
+                record.RoleId = projectMember.RoleId; 
 
-            return NoContent();
+                await _context.SaveChangesAsync();
+                return Ok(new { message = "Status updated" });
+            }
+            catch (Exception exp)
+            {
+                return StatusCode(500, new { message = exp.Message }); 
+            }
         }
+
+
+
+
 
 
 

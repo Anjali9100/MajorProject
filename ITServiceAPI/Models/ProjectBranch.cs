@@ -15,6 +15,12 @@ public partial class ProjectBranch
 
     public string? Description { get; set; }
 
+    public int? ProjectId { get; set; }
+
+    public virtual Project? Project { get; set; }
+
+    public virtual ICollection<ProjectMember> ProjectMembers { get; set; } = new List<ProjectMember>();
+
     public virtual ICollection<ProjectsModule> ProjectsModules { get; set; } = new List<ProjectsModule>();
 
     public virtual ICollection<Request> Requests { get; set; } = new List<Request>();

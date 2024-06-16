@@ -20,23 +20,50 @@ namespace ITServiceAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetEmployees()
         {
-            return await _context.Users.ToListAsync();
-        }
-
-        // GET: api/Employees/5
-        [HttpGet("GetEmpById/{id}")]
-        public async Task<ActionResult<User>> GetEmployee(int id)
-        {
-            var employee = await _context.Users.FindAsync(id);
+            var employee = await _context.UserViews.ToListAsync();
 
             if (employee == null)
             {
                 return Ok(new { message = "not found" });
             }
 
-            return employee;
+            return Ok(employee);
         }
 
+        // GET: api/Employees/5
+        [HttpGet("GetManagerOrTeamLead")]
+        public async Task<ActionResult<User>> GetManagerRecord()
+        {
+            var employee = await _context.UserViews
+                             .Where(er => er.RoleName.ToLower() == "manager" || er.RoleName.ToLower() == "team lead")
+                             .ToListAsync();
+
+
+            if (employee == null)
+            {
+                return Ok(new { message = "not found" });
+            }
+
+            return Ok(employee);
+        }
+
+
+
+        [HttpGet("GetEmployeeRecord")]
+        public async Task<ActionResult<User>> GetEmployeeRecord()
+        {
+            var employee = await _context.UserViews
+                             .Where(er => er.RoleName.ToLower() == "employee")
+                             .ToListAsync();
+
+
+            if (employee == null)
+            {
+                return Ok(new { message = "not found" });
+            }
+
+            return Ok(employee);
+        }
 
 
         // POST: api/Employees
