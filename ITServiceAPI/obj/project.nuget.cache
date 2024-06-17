@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7OauAqfQwUk02dD8v+2NsIcyj5jkxvxMQR1qaQXwog9UZOjoZry5yWq+VQKRCIr5NyfHr0JD6pVGMJVAGS7BSw==",
+  "dgSpecHash": "1vKW8YxezibvL1ojk1S/VrZWhfsBmfoPy/TqG3TyqcOQdtjrLOkUlbiyqtSmRDFVhDC3QiVtqGb3ytzMz3Zufg==",
   "success": true,
-  "projectFilePath": "D:\\Spektra---Training-Assignment\\MajorProject\\ITServiceAPI\\ITServiceAPI.csproj",
+  "projectFilePath": "D:\\MajorProject\\ITServiceAPI\\ITServiceAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

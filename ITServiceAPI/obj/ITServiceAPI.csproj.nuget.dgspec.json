@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Spektra---Training-Assignment\\MajorProject\\ITServiceAPI\\ITServiceAPI.csproj": {}
+    "D:\\MajorProject\\ITServiceAPI\\ITServiceAPI.csproj": {}
   },
   "projects": {
-    "D:\\Spektra---Training-Assignment\\MajorProject\\ITServiceAPI\\ITServiceAPI.csproj": {
+    "D:\\MajorProject\\ITServiceAPI\\ITServiceAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Spektra---Training-Assignment\\MajorProject\\ITServiceAPI\\ITServiceAPI.csproj",
+        "projectUniqueName": "D:\\MajorProject\\ITServiceAPI\\ITServiceAPI.csproj",
         "projectName": "ITServiceAPI",
-        "projectPath": "D:\\Spektra---Training-Assignment\\MajorProject\\ITServiceAPI\\ITServiceAPI.csproj",
+        "projectPath": "D:\\MajorProject\\ITServiceAPI\\ITServiceAPI.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "D:\\Spektra---Training-Assignment\\MajorProject\\ITServiceAPI\\obj\\",
+        "outputPath": "D:\\MajorProject\\ITServiceAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
