@@ -22,6 +22,10 @@ export class ProjectBranchService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
+
+  getBranchCount():Observable<any[]>{
+    return this.http.get<any[]>('https://localhost:7071/api/ProjectBranches/projectBranchCount');
+  }
   
 
   getBranchBasedOnPro(projectId:any): Observable<any[]> {

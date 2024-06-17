@@ -39,9 +39,13 @@ public partial class ItserviceContext : DbContext
 
     public virtual DbSet<ViewManagerProjectCount> ViewManagerProjectCounts { get; set; }
 
+    public virtual DbSet<ViewProjectBranchCount> ViewProjectBranchCounts { get; set; }
+
     public virtual DbSet<ViewProjectDetail> ViewProjectDetails { get; set; }
 
     public virtual DbSet<ViewProjectMemberDetail> ViewProjectMemberDetails { get; set; }
+
+    public virtual DbSet<ViewProjectModuleCount> ViewProjectModuleCounts { get; set; }
 
     public virtual DbSet<ViewRequestDetail> ViewRequestDetails { get; set; }
 
@@ -368,6 +372,18 @@ public partial class ItserviceContext : DbContext
                 .IsUnicode(false);
         });
 
+        modelBuilder.Entity<ViewProjectBranchCount>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToView("ViewProjectBranchCounts");
+
+            entity.Property(e => e.ProjectId).HasColumnName("ProjectID");
+            entity.Property(e => e.ProjectName)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+        });
+
         modelBuilder.Entity<ViewProjectDetail>(entity =>
         {
             entity
@@ -432,6 +448,18 @@ public partial class ItserviceContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.RoleName)
                 .HasMaxLength(201)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<ViewProjectModuleCount>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToView("ViewProjectModuleCounts");
+
+            entity.Property(e => e.ProjectId).HasColumnName("ProjectID");
+            entity.Property(e => e.ProjectName)
+                .HasMaxLength(255)
                 .IsUnicode(false);
         });
 

@@ -44,6 +44,21 @@ namespace ITServiceAPI.Controllers
 
 
 
+        [HttpGet("projectBranchCount")]
+        public async Task<ActionResult<ProjectBranch>> getBrnachCount()
+        {
+            var branchesCount = await _context.ViewProjectBranchCounts.ToListAsync();
+
+            if (branchesCount == null)
+            {
+                return Ok(new { message = "not found" });
+            }
+
+            return Ok(branchesCount);
+        }
+
+
+
         // POST: api/ProjectBranches
         [HttpPost]
         public async Task<ActionResult<ProjectBranch>> PostProjectBranch(ProjectBranch projectBranch)

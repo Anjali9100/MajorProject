@@ -41,12 +41,9 @@
                             <td>{{x.requestDescription}}</td>
                             <td>{{x.createdByName}}</td>
                             <td>
-                                @if(x.status==0){
-                                    <button class="btn btn-warning p-1">Pending</button>
-                                }
-                                @else {
-                                    <button class="btn btn-warning">Pending</button>
-                                }
+                                <button class="btn" [class.btn-warning]="x.status == 0" [class.btn-success]="x.status != 0" (click)="toggleStatus(x)">
+                                    {{ x.status == 0 ? 'Pending' : 'Approved' }}
+                                </button>                                
                             </td>
                             <td>
                                 <button class="btn edit-btn" data-toggle="modal" data-target="#requestModel" title="Edit Record" (click)="editRecord(x)" ><i class="fas fa-edit"></i></button>

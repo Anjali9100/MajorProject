@@ -22,6 +22,10 @@ export class ProjectModuleService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
+
+  getModuleCount():Observable<any[]>{
+    return this.http.get<any[]>('https://localhost:7071/api/ProjectsModules/projectModuleCount');
+  }
   
 
   getModuleBasedOnProject(projectId:any):Observable<any>{

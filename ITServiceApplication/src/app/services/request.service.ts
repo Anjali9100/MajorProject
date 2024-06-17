@@ -36,4 +36,18 @@ export class RequestService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete<any>(url);
   }
+
+
+
+
+  updateStatus(projectMemberID: number, status: number, description:string): Observable<any> {
+    const url = `https://localhost:7071/api/Requests/updateStatus/${projectMemberID}`;
+    const body = { status: status, description: description};
+    return this.http.put<any>(url, body);
+  }
+
+  
+
+
+
 }

@@ -106,6 +106,30 @@ export class CreateRequestComponent {
 
 
 
+
+  toggleStatus(item: any): void {
+    item.status = item.status == 0 ? 1 : 0;
+    if(item.status==1){
+      if(confirm("Are you sure want to Approve")){
+        this.requestService.updateStatus(item.requestId, item.status, item.requestDescription).subscribe({
+            next: (response) => {
+              if(response.message=="Status updated"){
+                this.showMsg="Status updated successfully";
+                setTimeout(() => {
+                  this.showMsg = "";
+                }, 5000);
+              }
+            },
+            error: (error) => {
+                console.error('Failed to update status', error);
+            }
+        });
+      }
+    }
+  }
+
+
+
   getRequestRecord(){
     this.requestService.getRequestRecord()
      .subscribe({

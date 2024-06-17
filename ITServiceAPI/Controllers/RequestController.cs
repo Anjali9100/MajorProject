@@ -75,6 +75,34 @@ namespace ITServiceAPI.Controllers
 
         }
 
+
+
+
+        [HttpPut("updateStatus/{RequestId}")]
+        public async Task<IActionResult> UpdateRequestStatus(int RequestId, Request request)
+        {
+            var record = await _context.Requests.FindAsync(RequestId);
+            if (record == null)
+            {
+                return Ok(new { message = "not found" });
+            }
+
+            try
+            {
+                record.Status = request.Status;
+                record.Description = request.Description;
+
+                await _context.SaveChangesAsync();
+                return Ok(new { message = "Status updated" });
+            }
+            catch (Exception exp)
+            {
+                return StatusCode(500, new { message = exp.Message });
+            }
+        }
+
+
+
         // DELETE: api/Requests/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteRequest(int id)

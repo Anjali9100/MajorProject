@@ -51,6 +51,24 @@ namespace ITServiceAPI.Controllers
             return Ok(new { message = "save" });
         }
 
+
+
+        [HttpGet("projectModuleCount")]
+        public async Task<ActionResult<ProjectBranch>> getBrnachCount()
+        {
+            var moduleCount = await _context.ViewProjectModuleCounts.ToListAsync();
+
+            if (moduleCount == null)
+            {
+                return Ok(new { message = "not found" });
+            }
+
+            return Ok(moduleCount);
+        }
+
+
+
+
         // PUT: api/ProjectsModules/5
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProjectsModule(int id, ProjectsModule projectsModule)
