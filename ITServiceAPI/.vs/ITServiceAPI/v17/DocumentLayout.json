@@ -3,16 +3,36 @@
   "WorkspaceRootPath": "D:\\MajorProject\\ITServiceAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\majorproject\\itserviceapi\\controllers\\requestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:controllers\\requestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\majorproject\\itserviceapi\\controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\majorproject\\itserviceapi\\models\\itservicecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:models\\itservicecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\majorproject\\itserviceapi\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\majorproject\\itserviceapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\majorproject\\itserviceapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\majorproject\\itserviceapi\\controllers\\projectmodulescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:controllers\\projectmodulescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\majorproject\\itserviceapi\\controllers\\projectbranchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:controllers\\projectbranchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\majorproject\\itserviceapi\\controllers\\requestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:controllers\\requestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\majorproject\\itserviceapi\\controllers\\projectmembercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,20 +43,8 @@
       "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:models\\request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\majorproject\\itserviceapi\\models\\itservicecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:models\\itservicecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\majorproject\\itserviceapi\\controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\majorproject\\itserviceapi\\models\\projectmember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:models\\projectmember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\majorproject\\itserviceapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1939D97C-C0F8-4AE3-A339-8D6DBA3D4C4A}|ITServiceAPI.csproj|d:\\majorproject\\itserviceapi\\models\\projectsmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -82,7 +90,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\MajorProject\\ITServiceAPI\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "D:\\MajorProject\\ITServiceAPI\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAwCsAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T04:45:05.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RolesController.cs",
+              "DocumentMoniker": "D:\\MajorProject\\ITServiceAPI\\Controllers\\RolesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RolesController.cs",
+              "ToolTip": "D:\\MajorProject\\ITServiceAPI\\Controllers\\RolesController.cs",
+              "RelativeToolTip": "Controllers\\RolesController.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAowCkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T14:01:32.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ItserviceContext.cs",
               "DocumentMoniker": "D:\\MajorProject\\ITServiceAPI\\Models\\ItserviceContext.cs",
               "RelativeDocumentMoniker": "Models\\ItserviceContext.cs",
@@ -90,35 +124,51 @@
               "RelativeToolTip": "Models\\ItserviceContext.cs",
               "ViewState": "AQIAABQAAAAAAAAAAAAgwB8AAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T06:27:23.187Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RequestController.cs",
-              "DocumentMoniker": "D:\\MajorProject\\ITServiceAPI\\Controllers\\RequestController.cs",
-              "RelativeDocumentMoniker": "Controllers\\RequestController.cs",
-              "ToolTip": "D:\\MajorProject\\ITServiceAPI\\Controllers\\RequestController.cs",
-              "RelativeToolTip": "Controllers\\RequestController.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAswFsAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T10:55:34.51Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Request.cs",
-              "DocumentMoniker": "D:\\MajorProject\\ITServiceAPI\\Models\\Request.cs",
-              "RelativeDocumentMoniker": "Models\\Request.cs",
-              "ToolTip": "D:\\MajorProject\\ITServiceAPI\\Models\\Request.cs",
-              "RelativeToolTip": "Models\\Request.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T04:45:31.646Z"
+              "WhenOpened": "2024-06-14T06:27:23.187Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ProjectController.cs",
+              "DocumentMoniker": "D:\\MajorProject\\ITServiceAPI\\Controllers\\ProjectController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProjectController.cs",
+              "ToolTip": "D:\\MajorProject\\ITServiceAPI\\Controllers\\ProjectController.cs",
+              "RelativeToolTip": "Controllers\\ProjectController.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAQwDwAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T04:21:44.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RequestController.cs",
+              "DocumentMoniker": "D:\\MajorProject\\ITServiceAPI\\Controllers\\RequestController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RequestController.cs",
+              "ToolTip": "D:\\MajorProject\\ITServiceAPI\\Controllers\\RequestController.cs*",
+              "RelativeToolTip": "Controllers\\RequestController.cs*",
+              "ViewState": "AQIAACgAAAAAAAAAAAAAwDIAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T10:55:34.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProjectModulesController.cs",
+              "DocumentMoniker": "D:\\MajorProject\\ITServiceAPI\\Controllers\\ProjectModulesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProjectModulesController.cs",
+              "ToolTip": "D:\\MajorProject\\ITServiceAPI\\Controllers\\ProjectModulesController.cs",
+              "RelativeToolTip": "Controllers\\ProjectModulesController.cs",
+              "ViewState": "AQIAAGkAAAAAAAAAAADwvzcAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T10:54:54.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ProjectBranchController.cs",
               "DocumentMoniker": "D:\\MajorProject\\ITServiceAPI\\Controllers\\ProjectBranchController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProjectBranchController.cs",
@@ -130,32 +180,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProjectModulesController.cs",
-              "DocumentMoniker": "D:\\MajorProject\\ITServiceAPI\\Controllers\\ProjectModulesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProjectModulesController.cs",
-              "ToolTip": "D:\\MajorProject\\ITServiceAPI\\Controllers\\ProjectModulesController.cs",
-              "RelativeToolTip": "Controllers\\ProjectModulesController.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAYwEEAAAAjAAAA",
+              "DocumentIndex": 9,
+              "Title": "Request.cs",
+              "DocumentMoniker": "D:\\MajorProject\\ITServiceAPI\\Models\\Request.cs",
+              "RelativeDocumentMoniker": "Models\\Request.cs",
+              "ToolTip": "D:\\MajorProject\\ITServiceAPI\\Models\\Request.cs",
+              "RelativeToolTip": "Models\\Request.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T10:54:54.936Z",
+              "WhenOpened": "2024-06-16T04:45:31.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\MajorProject\\ITServiceAPI\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "D:\\MajorProject\\ITServiceAPI\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAA9wBMAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T12:04:42.397Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ProjectController.cs",
-              "DocumentMoniker": "D:\\MajorProject\\ITServiceAPI\\Controllers\\ProjectController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProjectController.cs",
-              "ToolTip": "D:\\MajorProject\\ITServiceAPI\\Controllers\\ProjectController.cs",
-              "RelativeToolTip": "Controllers\\ProjectController.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAQwDwAAAA/AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T04:21:44.422Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "ProjectMemberController.cs",
               "DocumentMoniker": "D:\\MajorProject\\ITServiceAPI\\Controllers\\ProjectMemberController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProjectMemberController.cs",
@@ -167,7 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "ProjectMember.cs",
               "DocumentMoniker": "D:\\MajorProject\\ITServiceAPI\\Models\\ProjectMember.cs",
               "RelativeDocumentMoniker": "Models\\ProjectMember.cs",
@@ -179,19 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\MajorProject\\ITServiceAPI\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "D:\\MajorProject\\ITServiceAPI\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AQIAAGwAAAAAAAAAAAAUwIgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T04:45:05.738Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "ProjectsModule.cs",
               "DocumentMoniker": "D:\\MajorProject\\ITServiceAPI\\Models\\ProjectsModule.cs",
               "RelativeDocumentMoniker": "Models\\ProjectsModule.cs",
@@ -203,7 +241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "ProjectBranch.cs",
               "DocumentMoniker": "D:\\MajorProject\\ITServiceAPI\\Models\\ProjectBranch.cs",
               "RelativeDocumentMoniker": "Models\\ProjectBranch.cs",
@@ -215,7 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Project.cs",
               "DocumentMoniker": "D:\\MajorProject\\ITServiceAPI\\Models\\Project.cs",
               "RelativeDocumentMoniker": "Models\\Project.cs",

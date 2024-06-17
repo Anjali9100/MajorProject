@@ -2,6 +2,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <h4 class="text-center mb-3">Profile Details</h4>
+            <h6 class="text-center">{{showMsg}}</h6>
         </div>
         <div class="col-md-7">
             <div class="profile-card">
@@ -12,42 +13,42 @@
                         </div>
                     </div>
                     <div class="col-md-9">
-                        <h1 class="profile-name">Samantha Janes</h1>
-                        <form action="">
+                        <form #profileData="ngForm" (ngSubmit)="updateProfile(profileData)">
                             <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <h6><input class="profile-name profile-text" type="text" id="firstName" placeholder="First Name"></h6>
+                                <div class="form-group col-md-8">
+                                    <h6>
+                                        <input class="profile-name profile-text" [(ngModel)]="fullName" name="fullName" type="text" id="fullName" placeholder="Full Name">
+                                    </h6>
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="firstName">Email</label><br>
-                                    <input type="text" class="profile-text" id="firstName" placeholder="Email">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="firstName">Phone</label><br>
-                                    <input type="text" class="profile-text" id="firstName" placeholder="Phone">
-                                </div>
+                              <div class="form-group col-md-6">
+                                <label for="email">Email</label><br>
+                                <input type="text" [(ngModel)]="profileRecord.email" name="email" class="profile-text" id="email" placeholder="Email">
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="phone">Phone</label><br>
+                                <input type="text" [(ngModel)]="profileRecord.phone" name="phone" class="profile-text" id="phone" placeholder="Phone">
+                              </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="firstName">Role</label><br>
-                                    <input type="text" class="profile-text" id="firstName" placeholder="Role">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="firstName">Password</label><br>
-                                    <input type="text" class="profile-text" id="firstName" placeholder="Password">
-                                </div>
+                              <div class="form-group col-md-6">
+                                <label for="role">Role</label><br>
+                                <input type="text" disabled [(ngModel)]="profileRecord.roleName" name="role" class="profile-text" id="role" placeholder="Role">
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="password">Password</label><br>
+                                <input type="password" [(ngModel)]="profileRecord.password" name="password" class="profile-text" id="password" placeholder="Password">
+                              </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="firstName">Address</label><br>
-                                    <input type="text" class="profile-text" id="firstName" placeholder="Address">
-                                </div>
+                              <div class="form-group col-md-6">
+                                <label for="address">Address</label><br>
+                                <input type="text" [(ngModel)]="profileRecord.address" name="address" class="profile-text" id="address" placeholder="Address">
+                              </div>
                             </div>
-                            <button>Update Profile</button>
+                            <button type="submit">Update Profile</button>
                         </form>
-                       
                     </div>
                 </div>
             </div>

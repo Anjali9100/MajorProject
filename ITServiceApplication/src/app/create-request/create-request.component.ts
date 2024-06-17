@@ -3,6 +3,7 @@ import { ProjectService } from '../services/project.service';
 import { EmployeeService } from '../services/employee.service';
 import { NgForm } from '@angular/forms';
 import { RequestService } from '../services/request.service';
+import { RolesService } from '../services/roles.service';
 
 @Component({
   selector: 'app-create-request',
@@ -28,25 +29,46 @@ export class CreateRequestComponent {
   ModuleId:any;
   EmployeeId:any;
 
-  loginId:any;
+  roleRecord:any;
+
+  checkRoleId: any;
+  loginId: string | null = null;
+  roleName: string | null = null;
+  
   
   
 
 
   constructor( 
     private projectService:ProjectService,
-    private empService:EmployeeService, private requestService:RequestService){
+    private empService:EmployeeService, private requestService:RequestService,
+    private roleService:RolesService){
 
     this.getManagerOrTeamLeadRecord();
-    this.getEmployeeRecord();
   }
 
   ngOnInit(): void {
     this.getRequestRecord();
+    if (typeof window !== 'undefined') {
+      this.loginId = sessionStorage.getItem('userId');
+      this.checkRoleId = sessionStorage.getItem('RoleId');
+      if (this.checkRoleId) {
+        this.getRoleNameById(this.checkRoleId);
+      }
+    }
   }
 
 
 
+  getRoleNameById(roleId:any) {
+    this.roleService.getRoleById(roleId).subscribe({
+      next: (role) => {
+        this.roleName = role.roleName.toLowerCase();
+      },
+      error: (error) => console.error('Error fetching role:', error)
+    });
+  }
+  
 
 
   getManagerOrTeamLeadRecord(){
@@ -86,18 +108,6 @@ export class CreateRequestComponent {
 
 
 
-  getEmployeeRecord(): void {
-    this.empService.getEmployeeOnly()
-      .subscribe({
-        next: (data) => {
-          this.employeeRecord = data
-        },
-        error: (err) => {
-          console.log(err);
-        }
-      });
-  }
-
 
   openForm() {
     this.myform.resetForm(); 
@@ -108,26 +118,32 @@ export class CreateRequestComponent {
 
 
   toggleStatus(item: any): void {
-    item.status = item.status == 0 ? 1 : 0;
-    if(item.status==1){
-      if(confirm("Are you sure want to Approve")){
-        this.requestService.updateStatus(item.requestId, item.status, item.requestDescription).subscribe({
+    console.log(this.roleName);
+    if (this.roleName !== 'employee') {  
+      item.status = item.status === 0 ? 1 : 0;
+      if (item.status === 1) {
+        if (confirm("Are you sure you want to Approve?")) {
+          this.requestService.updateStatus(item.requestId, item.status, item.requestDescription).subscribe({
             next: (response) => {
-              if(response.message=="Status updated"){
-                this.showMsg="Status updated successfully";
+              if (response.message === "Status updated") {
+                this.showMsg = "Status updated successfully";
                 setTimeout(() => {
                   this.showMsg = "";
                 }, 5000);
               }
             },
             error: (error) => {
-                console.error('Failed to update status', error);
+              console.error('Failed to update status', error);
+              this.showMsg = "Failed to update status";
+              setTimeout(() => {
+                this.showMsg = "";
+              }, 5000);
             }
-        });
+          });
+        }
       }
     }
   }
-
 
 
   getRequestRecord(){

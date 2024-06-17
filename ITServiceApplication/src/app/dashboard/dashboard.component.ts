@@ -65,7 +65,6 @@ export class DashboardComponent implements AfterViewInit {
     this.moduleService.getModuleCount().subscribe({
       next:(data)=>{
         this.moduleCount=data;
-        console.log(data);
         this.moduleCountChart();
       }
     })

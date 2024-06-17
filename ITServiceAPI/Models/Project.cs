@@ -23,6 +23,8 @@ public partial class Project
 
     public DateTime ModifyDate { get; set; }
 
+    public int? Status { get; set; }
+
     public virtual User? Emp { get; set; }
 
     public virtual ICollection<ProjectAction> ProjectActions { get; set; } = new List<ProjectAction>();

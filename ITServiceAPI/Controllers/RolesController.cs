@@ -23,6 +23,9 @@ namespace ITServiceAPI.Controllers
             return await _context.Roles.ToListAsync();
         }
 
+
+
+
         // GET: api/Roles/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Role>> GetRole(int id)

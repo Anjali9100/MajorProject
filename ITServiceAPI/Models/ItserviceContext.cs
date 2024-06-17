@@ -31,6 +31,8 @@ public partial class ItserviceContext : DbContext
 
     public virtual DbSet<Request> Requests { get; set; }
 
+    public virtual DbSet<RequestedProjectDetail> RequestedProjectDetails { get; set; }
+
     public virtual DbSet<Role> Roles { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
@@ -68,6 +70,9 @@ public partial class ItserviceContext : DbContext
             entity.Property(e => e.ProjectName)
                 .HasMaxLength(255)
                 .IsUnicode(false);
+            entity.Property(e => e.Status)
+                .HasDefaultValue(0)
+                .HasColumnName("status");
 
             entity.HasOne(d => d.Emp).WithMany(p => p.Projects)
                 .HasForeignKey(d => d.EmpId)
@@ -120,6 +125,9 @@ public partial class ItserviceContext : DbContext
             entity.Property(e => e.Description).HasColumnType("text");
             entity.Property(e => e.IsActive).HasDefaultValue(true);
             entity.Property(e => e.ProjectId).HasColumnName("ProjectID");
+            entity.Property(e => e.Status)
+                .HasDefaultValue(0)
+                .HasColumnName("status");
 
             entity.HasOne(d => d.Project).WithMany(p => p.ProjectBranches)
                 .HasForeignKey(d => d.ProjectId)
@@ -264,6 +272,38 @@ public partial class ItserviceContext : DbContext
             entity.HasOne(d => d.Project).WithMany(p => p.Requests)
                 .HasForeignKey(d => d.ProjectId)
                 .HasConstraintName("FK__Requests__Projec__74AE54BC");
+        });
+
+        modelBuilder.Entity<RequestedProjectDetail>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToView("requestedProjectDetails");
+
+            entity.Property(e => e.BranchDescription).HasColumnType("text");
+            entity.Property(e => e.BranchId).HasColumnName("BranchID");
+            entity.Property(e => e.BranchName)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+            entity.Property(e => e.ManagerEmail)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.ManagerName)
+                .HasMaxLength(201)
+                .IsUnicode(false);
+            entity.Property(e => e.ModuleDescription).HasColumnType("text");
+            entity.Property(e => e.ModuleName)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+            entity.Property(e => e.ProModuleId).HasColumnName("ProModuleID");
+            entity.Property(e => e.ProjectDescription).HasColumnType("text");
+            entity.Property(e => e.ProjectId).HasColumnName("ProjectID");
+            entity.Property(e => e.ProjectName)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+            entity.Property(e => e.RequestCreatedDate).HasColumnType("datetime");
+            entity.Property(e => e.RequestDescription).HasColumnType("text");
+            entity.Property(e => e.RequestId).HasColumnName("RequestID");
         });
 
         modelBuilder.Entity<Role>(entity =>

@@ -17,6 +17,8 @@ public partial class ProjectBranch
 
     public int? ProjectId { get; set; }
 
+    public int? Status { get; set; }
+
     public virtual Project? Project { get; set; }
 
     public virtual ICollection<ProjectMember> ProjectMembers { get; set; } = new List<ProjectMember>();

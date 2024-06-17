@@ -1,5 +1,6 @@
 ﻿using ITServiceAPI.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +17,8 @@ namespace ITServiceAPI.Controllers
             _context = context;
         }
 
+
+
         // GET: api/Employees
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetEmployees()
@@ -26,9 +29,41 @@ namespace ITServiceAPI.Controllers
             {
                 return Ok(new { message = "not found" });
             }
-
             return Ok(employee);
         }
+
+
+        [HttpGet("getRecordById/{empId}")] 
+        public async Task<ActionResult<User>> GetEmployeeById(int empId)
+        {
+            var employee = await _context.UserViews
+                                         .FirstOrDefaultAsync(u => u.EmpId == empId); 
+
+            if (employee == null)
+            {
+                return NotFound(new { message = "not found" }); 
+            }
+
+            return Ok(employee); 
+        }
+
+
+
+        //[HttpPost("checkCredential")]
+        //public async Task<ActionResult<User>> CheckCredential([FromBody] User loginModel)
+        //{
+        //    var employee = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginModel.Email && u.Password == loginModel.Password);
+
+        //    if (employee == null)
+        //    {
+        //        return NotFound(new { message = "User not found" });
+        //    }
+
+        //    return Ok(employee);
+        //}
+
+
+
 
         // GET: api/Employees/5
         [HttpGet("GetManagerOrTeamLead")]

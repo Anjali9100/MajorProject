@@ -23,6 +23,19 @@ export class EmployeeService {
   }
 
 
+  getRecordById(empId:any):Observable<any>{
+    return this.http.get<any[]>(`${'https://localhost:7071/api/User/getRecordById'}/${empId}`);
+  }
+
+  // checkCredential(loginData: any): Observable<any> {
+  //   const url = 'https://localhost:7071/api/User/checkCredential';
+  //   const body = { email: loginData.email, password: loginData.password };
+
+  //   return this.http.post<any>(url, body);
+  // }
+  
+
+
   getManagerOrTeamLeadRecord(): Observable<any[]> {
     return this.http.get<any[]>('https://localhost:7071/api/User/GetManagerOrTeamLead');
   }

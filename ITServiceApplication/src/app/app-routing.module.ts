@@ -9,6 +9,10 @@ import { ProjectModuleComponent } from './project-module/project-module.componen
 import { RolesComponent } from './roles/roles.component';
 import { CreateRequestComponent } from './create-request/create-request.component';
 import { ProfleComponent } from './profle/profle.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { LoginComponent } from './login/login.component';
+// import { SignInComponent } from '@aws-amplify/ui-angular';
+// import { SignUpComponent } from '@aws-amplify/ui-angular';
 
 const routes: Routes = [
   {path:"employee", component:EmployeeComponent},
@@ -19,7 +23,12 @@ const routes: Routes = [
   {path: "project-module", component:ProjectModuleComponent},
   {path: "roles", component:RolesComponent},
   {path: "create-request", component:CreateRequestComponent},
-  {path:"Profile",component:ProfleComponent}
+  {path:"Profile",component:ProfleComponent},
+  // {path:"signup", component:SignUpComponent},
+  {path:"login",component:LoginComponent},
+  {path:"", component:LoginComponent},
+  {path:'SignUp',component:SignUpComponent}
+
 ];
 
 @NgModule({

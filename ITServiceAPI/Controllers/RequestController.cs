@@ -38,6 +38,23 @@ namespace ITServiceAPI.Controllers
             return request;
         }
 
+
+
+        [HttpGet("requestedProject/{requestId}")] 
+        public async Task<ActionResult<Request>> GetRequestedProject(int requestId)
+        {
+            var request = await _context.Requests.FirstOrDefaultAsync(r => r.RequestId == requestId);
+
+            if (request == null)
+            {
+                return NotFound(new { message = "Request not found" });
+            }
+            return Ok(request);
+        }
+
+
+
+
         // POST: api/Requests
         [HttpPost]
         public async Task<ActionResult<Request>> InsertRequest(Request request)
@@ -100,6 +117,10 @@ namespace ITServiceAPI.Controllers
                 return StatusCode(500, new { message = exp.Message });
             }
         }
+
+
+
+
 
 
 

@@ -7,3 +7,15 @@
 .fa-trash {
   color: #b30000;
 }
+
+
+.sign-page-image img{
+  height: auto;
+  width: 100%;
+}
+
+.sign-box{
+  background-color: white;
+  box-shadow: 5px 10px 10px 10px lightblue;
+  padding: 25px;
+}

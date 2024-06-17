@@ -3,18 +3,18 @@
   }
 
   .navbar{
-    background: #008080;
+    background: #5c5cd6;
   }
 
   .list-group-item{
-    color: #008080;
+    color: #1a0033;
     font-weight: 600;
     cursor: pointer;
     border-left: none;
   }
 
   .list-group-item.active {
-    background-color: #ccffff !important; 
+    background-color: #ffcce6 !important; 
     border-color: #ccffff !important; 
     transition: margin 0.25s ease-out;
   }

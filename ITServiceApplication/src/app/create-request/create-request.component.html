@@ -26,7 +26,8 @@
                     <th>S.NO</th>
                     <th>Project Name</th>
                     <th>Description</th>
-                    <th>Request Created By</th>
+                    <th>Manager/Team Lead</th>
+                    <th>Employee Name</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -39,6 +40,7 @@
                             <td>{{$index + 1}}</td>
                             <td>{{x.projectName}}</td>
                             <td>{{x.requestDescription}}</td>
+                            <td>{{x.assignedToName}}</td>
                             <td>{{x.createdByName}}</td>
                             <td>
                                 <button class="btn" [class.btn-warning]="x.status == 0" [class.btn-success]="x.status != 0" (click)="toggleStatus(x)">
@@ -108,13 +110,7 @@
                     <label for="Description">Description</label>
                     <input type="text" class="form-control" ngModel id="Description" name="Description" placeholder="Project Description">
                 </div>
-                <div class="form-group">
-                    <label for="CreatedBy">Employee</label>
-                    <select id="CreatedBy" name="CreatedBy" class="form-control" ngModel>
-                        <option value="">Select Employee</option>
-                        <option *ngFor="let x of employeeRecord" [value]="x.empId" [selected]="x.empId==EmployeeId " >{{ x.firstName + ' ' + x.lastName }}</option>
-                    </select>
-                </div>
+                <input type="hidden" [(ngModel)]="loginId" id="CreatedBy" name="CreatedBy">
                 <!-- <input type="hidden" name="CreatedBy" ngModel [value]="loginId"> -->
                 <h5 class="text-center">{{showMsg}}</h5>
                 <button type="submit" class="btn btn-primary">{{btnText}}</button>

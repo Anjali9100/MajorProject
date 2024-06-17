@@ -26,10 +26,9 @@ export class RolesService {
   }
 
 
-
   // Read Single Role
   getRoleById(id: number): Observable<any> {
-    const url = `${this.apiUrl}/${id}`;
+    const url = `${'https://localhost:7071/api/User/getRecordById'}/${id}`;
     return this.http.get<any>(url);
   }
 
