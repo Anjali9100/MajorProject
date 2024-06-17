@@ -509,13 +509,13 @@ public partial class ItserviceContext : DbContext
                 .HasNoKey()
                 .ToView("ViewRequestDetails");
 
-            entity.Property(e => e.AssignedToEmail)
-                .HasMaxLength(100)
-                .IsUnicode(false);
             entity.Property(e => e.AssignedToName)
                 .HasMaxLength(201)
                 .IsUnicode(false);
             entity.Property(e => e.AssignedToRoleId).HasColumnName("AssignedToRoleID");
+            entity.Property(e => e.AssignedToRoleName)
+                .HasMaxLength(100)
+                .IsUnicode(false);
             entity.Property(e => e.CreatedByEmail)
                 .HasMaxLength(100)
                 .IsUnicode(false);
@@ -523,6 +523,9 @@ public partial class ItserviceContext : DbContext
                 .HasMaxLength(201)
                 .IsUnicode(false);
             entity.Property(e => e.CreatedByRoleId).HasColumnName("CreatedByRoleID");
+            entity.Property(e => e.CreatedByRoleName)
+                .HasMaxLength(100)
+                .IsUnicode(false);
             entity.Property(e => e.CreatedDate).HasColumnType("datetime");
             entity.Property(e => e.ProjectId).HasColumnName("ProjectID");
             entity.Property(e => e.ProjectModifyDate).HasColumnType("datetime");

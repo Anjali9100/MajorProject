@@ -19,7 +19,23 @@ public partial class ViewRequestDetail
 
     public string? CreatedByName { get; set; }
 
+    public string? CreatedByEmail { get; set; }
+
+    public long? CreatedByPhone { get; set; }
+
+    public int? CreatedByRoleId { get; set; }
+
+    public bool? CreatedByIsActive { get; set; }
+
+    public string? CreatedByRoleName { get; set; }
+
     public string? AssignedToName { get; set; }
+
+    public int? AssignedToRoleId { get; set; }
+
+    public bool? AssignedToIsActive { get; set; }
+
+    public string? AssignedToRoleName { get; set; }
 
     public DateOnly? ProjectStartDate { get; set; }
 
@@ -32,20 +48,4 @@ public partial class ViewRequestDetail
     public bool? ProjectIsActive { get; set; }
 
     public DateTime? ProjectModifyDate { get; set; }
-
-    public string? CreatedByEmail { get; set; }
-
-    public long? CreatedByPhone { get; set; }
-
-    public int? CreatedByRoleId { get; set; }
-
-    public bool? CreatedByIsActive { get; set; }
-
-    public string? AssignedToEmail { get; set; }
-
-    public long? AssignedToPhone { get; set; }
-
-    public int? AssignedToRoleId { get; set; }
-
-    public bool? AssignedToIsActive { get; set; }
 }
