@@ -1,4 +1,5 @@
 
+
 @if(currentUrl=="/" ||  currentUrl=="/login" || currentUrl=="/SignUp"){
   <router-outlet></router-outlet>
 }
@@ -28,7 +29,7 @@
       </div>
     </nav>
     @for(x of roleRecord;track roleRecord){
-      @if(userRolesID==x.roleId && (x.roleName=="manager"|| x.roleName=="team lead" || x.roleName=="admin")){
+      @if(x.roleName=="Admin" && x.roleName==roleName){
         <!-- Bootstrap Sidebar -->
         <div class="d-flex" id="wrapper" [ngClass]="{'toggled': drawerOpened}">
           <!-- Sidebar -->
@@ -36,7 +37,7 @@
     
             <div class="list-group list-group-flush">
               <a class="list-group-item list-group-item-action" [class.active]="activeItem === 1" routerLink="dashboard">
-                <i class="bi bi-house"></i> Dashboard
+                <i class="bi bi-house"></i> Dashboard {{x.roleName}}
               </a>
               <a class="list-group-item list-group-item-action" [class.active]="activeItem === 2" routerLink="employee">
                 <i class="bi bi-house"></i> Manage Employee
@@ -67,18 +68,13 @@
                   </a>
                 </div>
               </div>
-    
-                <a class="list-group-item list-group-item-action"
-                  [class.active]="activeItem === 7" routerLink="create-request">
-                  <i class="bi bi-people"></i> Manage Requests
-                </a>
             </div>
           </div>
             <div id="page-content-wrapper">
               <router-outlet></router-outlet>
             </div>
         </div>
-      }@else if(userRolesID==x.roleId && x.roleName=="employee"){
+      }@else if((x.roleName=="Manager" && x.roleName==roleName) || (x.roleName=="Team Lead" && x.roleName==roleName)){
         <!-- Bootstrap Sidebar -->
         <div class="d-flex" id="wrapper" [ngClass]="{'toggled': drawerOpened}">
           <!-- Sidebar -->
@@ -87,6 +83,36 @@
             <div class="list-group list-group-flush">
               <a class="list-group-item list-group-item-action" [class.active]="activeItem === 5" routerLink="project-details">
                 <i class="bi bi-box-seam"></i> Project Details
+              </a>
+              <a class="list-group-item list-group-item-action" [class.active]="activeItem === 5" routerLink="project-branch">
+                <i class="bi bi-box-seam"></i> Project Branch
+              </a>
+              <a class="list-group-item list-group-item-action" [class.active]="activeItem === 6" routerLink="project-module">
+                <i class="bi bi-puzzle"></i> Project Modules
+              </a>
+              <a class="list-group-item list-group-item-action" [class.active]="activeItem === 7" routerLink="project-member">
+                <i class="bi bi-people"></i> Project Members
+              </a>
+              <a class="list-group-item list-group-item-action"
+                [class.active]="activeItem === 7" routerLink="create-request">
+                <i class="bi bi-people"></i> Manage Requests
+              </a>
+            </div>
+          </div>
+            <div id="page-content-wrapper">
+              <router-outlet></router-outlet>
+            </div>
+        </div>
+      }
+      @else if(x.roleName=="Employee" && x.roleName==roleName){
+        <!-- Bootstrap Sidebar -->
+        <div class="d-flex" id="wrapper" [ngClass]="{'toggled': drawerOpened}">
+          <!-- Sidebar -->
+          <div class="border-end bg-white" id="sidebar-wrapper" style="width: 310px; word-break: break-all;">
+    
+            <div class="list-group list-group-flush">
+              <a class="list-group-item list-group-item-action" [class.active]="activeItem === 5" routerLink="project-details">
+                <i class="bi bi-box-seam"></i> Project Details {{x.roleName}}
               </a>
               <a class="list-group-item list-group-item-action" [class.active]="activeItem === 7" routerLink="project-member">
                 <i class="bi bi-people"></i> Project Progress
@@ -106,29 +132,31 @@
     
 
     <!-- </ng-container> -->
-    <!-- <ng-container *ngIf="!isUserLoggedIn">
-      <amplify-authenticator
-        [formFields]="formFields"
-        [loginMechanisms]="['email']"
-        [signUpAttributes]="['name', 'phone_number']"
-      >
-        <ng-template
-          amplifySlot="authenticated"
-          let-user="user"
-          let-signOut="signOut"
-        >
-          <h1>Welcome {{ user.username }}!</h1>
-          <button (click)="signOut()">Sign Out</button>
-        </ng-template>
-      </amplify-authenticator>
-    </ng-container> -->
-
-
-
-
-
-
+    
 
 }
+
+<!-- <ng-container *ngIf="!isUserLoggedIn" >
+  <amplify-authenticator
+    [formFields]="formFields"
+    [loginMechanisms]="['email']"
+    [signUpAttributes]="['name']"
+  >
+    <ng-template
+      amplifySlot="authenticated"
+      let-user="user"
+      let-signOut="signOut"
+    >
+      <h1>Welcome {{ user.username }}!</h1>
+      <button (click)="signOut()">Sign Out</button>
+      <div *ngIf="true">{{ updateUser(user) }}</div>
+    </ng-template>
+  </amplify-authenticator>
+</ng-container> -->
+
+
+
+
+
 
 

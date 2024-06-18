@@ -19,14 +19,14 @@ export class AppComponent implements OnInit {
   firstName: string | null = null;
   lastName: string | null = null;
   roleRecord:any;
+  roleName:any;
 
   formFields = {
     signUp: {
       name: { order: 1 },
-      phone_number: { order: 2 },
       email: { order: 2 },
-      password: { order: 5 },
-      confirm_password: { order: 6 },
+      password: { order: 3 },
+      confirm_password: { order: 4 },
     },
   };
 
@@ -57,12 +57,13 @@ export class AppComponent implements OnInit {
 
       if (typeof window !== 'undefined') {
         this.userRolesID = sessionStorage.getItem('RoleId');
+        this.roleName = sessionStorage.getItem('roleName');
         this.firstName = sessionStorage.getItem('FirstName');
         this.lastName = sessionStorage.getItem('LastName');
       }
       this.getRoleRecord();
     });
-    
+
   }
 
 
@@ -70,12 +71,9 @@ export class AppComponent implements OnInit {
   getRoleRecord(){
     this.roleService.getRoles().subscribe({
       next: (roles) => {
-        this.roleRecord = roles.map(role => ({
-          roleId: role.roleId,
-          roleName: role.roleName.toLowerCase()
-        }));
-      },
-      error: (error) => console.error('Error fetching roles:', error)
+        this.roleRecord = roles;
+        console.log(roles)
+      }
     });
   }
 
@@ -86,13 +84,17 @@ export class AppComponent implements OnInit {
 
   logOut() {
     this.authService.signOut();
-    window.location.reload();
+    this.router.navigate(['/login']); 
+    
   }
 
   toggleProjectSubmenu(): void {
     this.isProjectSubmenuOpen = !this.isProjectSubmenuOpen;
   }
 
-
+  // updateUser(user: any) {
+  //   this.isUserLoggedIn =true;
+  //   this.router.navigate(['/dashboard']); 
+  // }
 
 }

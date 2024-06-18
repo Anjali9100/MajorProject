@@ -19,6 +19,7 @@ export class LoginComponent {
         if (matchingUser) {
           console.log(matchingUser);
           if (typeof window !== 'undefined') {
+            sessionStorage.setItem('roleName', matchingUser.roleName);
             sessionStorage.setItem('userId', matchingUser.empId);
             sessionStorage.setItem('FirstName', matchingUser.firstName);
             sessionStorage.setItem('LastName', matchingUser.lastName);

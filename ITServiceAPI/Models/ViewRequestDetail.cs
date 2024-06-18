@@ -17,6 +17,8 @@ public partial class ViewRequestDetail
 
     public DateTime CreatedDate { get; set; }
 
+    public int? CreatedById { get; set; }
+
     public string? CreatedByName { get; set; }
 
     public string? CreatedByEmail { get; set; }
@@ -28,6 +30,8 @@ public partial class ViewRequestDetail
     public bool? CreatedByIsActive { get; set; }
 
     public string? CreatedByRoleName { get; set; }
+
+    public int? AssignedToId { get; set; }
 
     public string? AssignedToName { get; set; }
 

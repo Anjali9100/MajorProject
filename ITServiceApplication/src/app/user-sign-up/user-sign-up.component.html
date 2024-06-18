@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="row vh-100">
+        <!-- Centering horizontally and vertically in the viewport -->
+        <div class="col-12 d-flex justify-content-center align-items-center">
+            <div class="col-md-8 shadow rounded p-3"> <!-- Adjusted the column size for a more centered look -->
+                <div class="row g-0"> <!-- g-0 removes the gap between columns -->
+                    <div class="col-md-6 d-flex justify-content-center align-items-center">
+                        <!-- Image section -->
+                        <img src="https://img.lovepik.com/photo/45009/7683.jpg_wh300.jpg" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="text-center mb-4">Sign Up</h3>
+                        <form #signUpData="ngForm" (ngSubmit)="signup(signUpData)">
+                            <!-- <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="fname">First Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" ngModel id="fname" name="FirstName" placeholder="First Name"required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="lname">Last Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" ngModel id="lname" name="LastName" placeholder="Last Name" required>
+                                </div>
+                            </div> -->
+
+                            <div class="form-group col-md-6">
+                                <label for="username">UserName<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" ngModel id="username" name="username" placeholder="Username" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Id <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" ngModel id="email" name="Email" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password <span class="text-danger">*</span></label>
+                                <input type="password" class="form-control" id="password" ngModel name="password" placeholder="Password" required>
+                            </div>
+                            <!-- <p class="text-center text-danger">{{ showMsg }}</p> -->
+                            <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                            <p class="text-center">Already have an account <a href="" >Login</a></p> 
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -35,23 +35,32 @@
             <tbody>
                 @if(requestRecord && requestRecord.length>0){
                     @for(x of requestRecord; track $index){
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>{{$index + 1}}</td>
-                            <td>{{x.projectName}}</td>
-                            <td>{{x.requestDescription}}</td>
-                            <td>{{x.assignedToName}}</td>
-                            <td>{{x.createdByName}}</td>
-                            <td>
-                                <button class="btn" [class.btn-warning]="x.status == 0" [class.btn-success]="x.status != 0" (click)="toggleStatus(x)">
-                                    {{ x.status == 0 ? 'Pending' : 'Approved' }}
-                                </button>                                
-                            </td>
-                            <td>
-                                <button class="btn edit-btn" data-toggle="modal" data-target="#requestModel" title="Edit Record" (click)="editRecord(x)" ><i class="fas fa-edit"></i></button>
-                                <button class="btn delete-btn" title="Delete Record" (click)="deleteRecord(x.requestId)"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                            </td>
-                        </tr>
+                        
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>{{$index + 1}}</td>
+                                <td>{{x.projectName}}</td>
+                                <td>{{x.requestDescription}}</td>
+                                @if(x.createdByRoleId==loginId)
+                                {
+                                    <td>{{x.assignedToName}}</td>
+                                }
+                                @else if(x.assignedToRoleId==loginId){
+                                    <td>{{x.assignedToName}}</td>
+                                }@else{
+                                    <td>{{x.assignedToName}}</td>
+                                    <td>{{x.assignedToName}}</td>
+                                }
+                                <td>
+                                    <button class="btn" [class.btn-warning]="x.status == 0" [class.btn-success]="x.status != 0" (click)="toggleStatus(x)">
+                                        {{ x.status == 0 ? 'Pending' : 'Approved' }}
+                                    </button>                                
+                                </td>
+                                <td>
+                                    <button class="btn edit-btn" data-toggle="modal" data-target="#requestModel" title="Edit Record" (click)="editRecord(x)" ><i class="fas fa-edit"></i></button>
+                                    <button class="btn delete-btn" title="Delete Record" (click)="deleteRecord(x.requestId)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </td>
+                            </tr>
                     }
                 }@else{
                     <tr>

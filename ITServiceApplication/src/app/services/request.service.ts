@@ -17,10 +17,14 @@ export class RequestService {
     return this.http.post<any>(this.apiUrl, projectData);
   }
 
+
+
   // Read Role
-  getRequestRecord(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+  getRequestRecordLoginById(loginId:any): Observable<any[]> {
+    return this.http.get<any[]>(`${'https://localhost:7071/api/Requests/getRecordByLoginId'}/${loginId}`);
   }
+
+
   
 
   updateRequest(empData: any, userId: any): Observable<any> {

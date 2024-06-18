@@ -1,0 +1,25 @@
+<div class="container" style="height:100vh;">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+    <div id="code" class="col-4 py-5" style="height: 35vh;">
+    <div class="row">
+    <div class="col">
+    <h5 class="text-center" style="font-family: 'Rubik';">Email Verification</h5>
+    <p class="form-text text-center">Please enter the 6-digit Verification code that was sent to your email <b>{{email}}</b></p>
+    </div>
+    </div>
+    <div class="row d-flex justify-content-center align-items-between mt-3">
+    <div class="col-10">
+        <form (submit)="onSubmit()" #signInForm="ngForm">
+            <div class="row mb-3">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Code" id="password"
+                    name="password" ngModel #passwordInput="ngModel" [(ngModel)]="confirmationCode">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary form-control">create account</button>
+        </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>

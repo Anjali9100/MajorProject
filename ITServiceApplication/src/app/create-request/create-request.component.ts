@@ -48,12 +48,16 @@ export class CreateRequestComponent {
   }
 
   ngOnInit(): void {
-    this.getRequestRecord();
+    
     if (typeof window !== 'undefined') {
       this.loginId = sessionStorage.getItem('userId');
       this.checkRoleId = sessionStorage.getItem('RoleId');
       if (this.checkRoleId) {
         this.getRoleNameById(this.checkRoleId);
+      }
+
+      if (this.loginId) {
+        this.getRequestRecord(this.loginId);
       }
     }
   }
@@ -146,9 +150,9 @@ export class CreateRequestComponent {
   }
 
 
-  getRequestRecord(){
-    this.requestService.getRequestRecord()
-     .subscribe({
+  getRequestRecord(loginId:any){
+    this.requestService.getRequestRecordLoginById(loginId)
+      .subscribe({
         next: (data) => {
           this.requestRecord = data
           console.log(data)
@@ -158,6 +162,8 @@ export class CreateRequestComponent {
         }
       });
   }
+
+
   
 
   saveProjectRequest(requestData: any): void {
@@ -165,7 +171,7 @@ export class CreateRequestComponent {
       this.requestService.createRequest(requestData.value).subscribe({
         next: (data) => {
           if(data.message=="save"){
-            this.getRequestRecord();
+            this.getRequestRecord(this.loginId);
             requestData.reset();
             this.showMsg="Record save";
           }
@@ -183,7 +189,7 @@ export class CreateRequestComponent {
         next: (data) => {
           console.log(data)
           if(data.message=="updated"){
-            this.getRequestRecord();
+            this.getRequestRecord(this.loginId);
             this.showMsg="Record Update Successfully";
           }
           setTimeout(() => {
@@ -220,7 +226,7 @@ export class CreateRequestComponent {
       this.requestService.deleteRequest(requestId).subscribe({
           next: (data) => {
             if(data.message=="deleted"){
-              this.getRequestRecord();
+              this.getRequestRecord(this.loginId);
               this.showMsg="Record Deleted Successfully";
               setTimeout(() => {
                 this.showMsg = "";

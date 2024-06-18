@@ -40,6 +40,24 @@ namespace ITServiceAPI.Controllers
 
 
 
+        [HttpGet("getRecordByLoginId/{loginId}")]
+        public async Task<ActionResult<IEnumerable<Request>>> GetRequestRecordById(int loginId)
+        {
+            var requests = await _context.ViewRequestDetails
+                                        .Where(r => r.CreatedById == loginId || r.AssignedToId == loginId)
+                                        .ToListAsync();
+
+            if (requests.Count == 0)
+            {
+                return Ok(new { message = "not found" });
+            }
+
+            return Ok(requests);
+        }
+
+
+
+
         [HttpGet("requestedProject/{requestId}")] 
         public async Task<ActionResult<Request>> GetRequestedProject(int requestId)
         {

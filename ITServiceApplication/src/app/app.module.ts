@@ -21,12 +21,16 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
 import { Amplify } from 'aws-amplify';
+import { UserLoginComponent } from './user-login/user-login.component';
+import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
+import { EmailPageComponent } from './email-page/email-page.component';
+import { StartPageComponent } from './start-page/start-page.component';
 
 Amplify.configure({
   Auth: {
     Cognito: {
-      userPoolId: 'eu-north-1_sngTTrE6A',
-      userPoolClientId: '22pkilncepm0m8lli1tl2k7qg0',
+      userPoolId: 'eu-north-1_bjfKEDkIH',
+      userPoolClientId: '78fogm3t5e71htq0pfn37o1pil',
     },
   },
 });
@@ -43,7 +47,11 @@ Amplify.configure({
     DashboardComponent,
     ProfleComponent,
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
+    UserLoginComponent,
+    UserSignUpComponent,
+    EmailPageComponent,
+    StartPageComponent
   ],
   imports: [
     BrowserModule,
