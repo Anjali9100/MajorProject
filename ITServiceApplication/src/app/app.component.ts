@@ -72,7 +72,6 @@ export class AppComponent implements OnInit {
     this.roleService.getRoles().subscribe({
       next: (roles) => {
         this.roleRecord = roles;
-        console.log(roles)
       }
     });
   }

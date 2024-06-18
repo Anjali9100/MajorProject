@@ -26,8 +26,12 @@
                     <th>S.NO</th>
                     <th>Project Name</th>
                     <th>Description</th>
-                    <th>Manager/Team Lead</th>
-                    <th>Employee Name</th>
+                    @if(roleName=="Manager"){
+                        <th>Employee Name</th>
+                    }
+                    @if(roleName=="Manager"){
+                        <th>Manager/Team Lead</th>
+                    }
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -46,20 +50,25 @@
                                     <td>{{x.assignedToName}}</td>
                                 }
                                 @else if(x.assignedToRoleId==loginId){
-                                    <td>{{x.assignedToName}}</td>
-                                }@else{
-                                    <td>{{x.assignedToName}}</td>
-                                    <td>{{x.assignedToName}}</td>
+                                    <td>{{x.createdToName}}</td>
                                 }
                                 <td>
                                     <button class="btn" [class.btn-warning]="x.status == 0" [class.btn-success]="x.status != 0" (click)="toggleStatus(x)">
                                         {{ x.status == 0 ? 'Pending' : 'Approved' }}
                                     </button>                                
                                 </td>
-                                <td>
-                                    <button class="btn edit-btn" data-toggle="modal" data-target="#requestModel" title="Edit Record" (click)="editRecord(x)" ><i class="fas fa-edit"></i></button>
-                                    <button class="btn delete-btn" title="Delete Record" (click)="deleteRecord(x.requestId)"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                </td>
+                                @if(x.status==0){
+                                    <td>
+                                        <button class="btn edit-btn" data-toggle="modal" data-target="#requestModel" title="Edit Record" (click)="editRecord(x)" ><i class="fas fa-edit"></i></button>
+                                        <button class="btn delete-btn" title="Delete Record" (click)="deleteRecord(x.requestId)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    </td>
+                                }@else {
+                                    <td>
+                                        <button class="btn edit-btn" disabled data-toggle="modal" data-target="#requestModel" title="Edit Record" (click)="editRecord(x)" ><i class="fas fa-edit"></i></button>
+                                        <button class="btn delete-btn" disabled title="Delete Record" (click)="deleteRecord(x.requestId)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    </td>
+                                }
+                                
                             </tr>
                     }
                 }@else{

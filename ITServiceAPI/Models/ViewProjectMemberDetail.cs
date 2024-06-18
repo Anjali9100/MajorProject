@@ -17,9 +17,9 @@ public partial class ViewProjectMemberDetail
 
     public int? BranchId { get; set; }
 
-    public int? Status { get; set; }
+    public int Status { get; set; }
 
-    public int? Approved { get; set; }
+    public int Approved { get; set; }
 
     public DateTime MemberModifyDate { get; set; }
 
@@ -35,7 +35,7 @@ public partial class ViewProjectMemberDetail
 
     public bool? UserIsActive { get; set; }
 
-    public string? RoleName { get; set; }
+    public string? ManagerTeamLead { get; set; }
 
     public string? ProjectName { get; set; }
 
@@ -66,4 +66,10 @@ public partial class ViewProjectMemberDetail
     public bool? BranchIsActive { get; set; }
 
     public string? BranchDescription { get; set; }
+
+    public string? UserRole { get; set; }
+
+    public string? RoleDescription { get; set; }
+
+    public DateTime? RoleModifyDate { get; set; }
 }

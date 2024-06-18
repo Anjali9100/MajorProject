@@ -33,17 +33,31 @@
             <tbody>
                 @if(branchRecord && branchRecord.length>0){
                     @for(x of branchRecord; track $index){
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>{{$index + 1}}</td>
-                            <td>{{x.projectName}}</td>
-                            <td>{{x.branchName}}</td>
-                            <td>{{x.branchDescription}}</td>
-                            <td>
-                                <button class="btn edit-btn" data-toggle="modal"  data-target="#projectBranch" title="Edit Record" (click)="editRecord(x)" ><i class="fas fa-edit"></i></button>
-                                <button class="btn delete-btn" title="Delete Record" (click)="deleteRecord(x.branchId)"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                            </td>
-                        </tr>
+                        @if(x.empId==loginId && loginId!=1){
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>{{$index + 1}}</td>
+                                <td>{{x.projectName}}</td>
+                                <td>{{x.branchName}}</td>
+                                <td>{{x.branchDescription}}</td>
+                                <td>
+                                    <button class="btn edit-btn" data-toggle="modal"  data-target="#projectBranch" title="Edit Record" (click)="editRecord(x)" ><i class="fas fa-edit"></i></button>
+                                    <button class="btn delete-btn" title="Delete Record" (click)="deleteRecord(x.branchId)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </td>
+                            </tr>
+                        }@else if(roleId==1){
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>{{$index + 1}}</td>
+                                <td>{{x.projectName}}</td>
+                                <td>{{x.branchName}}</td>
+                                <td>{{x.branchDescription}}</td>
+                                <td>
+                                    <button class="btn edit-btn" data-toggle="modal"  data-target="#projectBranch" title="Edit Record" (click)="editRecord(x)" ><i class="fas fa-edit"></i></button>
+                                    <button class="btn delete-btn" title="Delete Record" (click)="deleteRecord(x.branchId)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </td>
+                            </tr>
+                        } 
                     }
                 }@else{
                     <tr>
@@ -76,7 +90,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add Member</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Create Branch</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -87,9 +101,13 @@
                     <label for="projectId">Project</label>
                     <select name="projectId" id="projectId" class="form-control" ngModel>
                         <option [ngValue] ="null">Select Project</option>
-                        <option *ngFor="let x of project;" [value]="x.projectId" [selected]="x.projectId == ProjectID">
-                            {{ x.projectName }}
-                        </option>    
+                        @for(x of project;track project){
+                            @if(x.empId==loginId){
+                                <option [value]="x.projectId">{{ x.projectName }}</option>
+                            }@else if(roleId==1){
+                                <option [value]="x.projectId">{{ x.projectName }}</option>
+                            }
+                        }
                     </select>
                 </div>
 

@@ -28,4 +28,6 @@ public partial class ProjectBranchDetail
     public int? RoleId { get; set; }
 
     public bool ProjectIsActive { get; set; }
+
+    public int? EmpId { get; set; }
 }

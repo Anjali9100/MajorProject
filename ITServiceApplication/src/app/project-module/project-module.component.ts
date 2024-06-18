@@ -19,6 +19,9 @@ export class ProjectModuleComponent {
   ProjectID:any;
   BranchID:any;
   selectedProjectId: number | null = null;
+  roleName:any;
+  loginId:any;
+  roleId:any;
 
 
   constructor(private branchService:ProjectBranchService, private projectService:ProjectService,private projectModule:ProjectModuleService){
@@ -29,6 +32,13 @@ export class ProjectModuleComponent {
   ngOnInit(): void {
     this.getModule();
     this.getProject();
+
+    if (typeof window !== 'undefined') {
+      this.roleName = sessionStorage.getItem('roleName');
+      this.loginId = sessionStorage.getItem('userId');
+      this.roleId = sessionStorage.getItem('RoleId');
+    }
+    
   }
 
 
@@ -53,6 +63,7 @@ export class ProjectModuleComponent {
     }
   }
 
+  
 
   openForm() {
     this.myform.resetForm(); 

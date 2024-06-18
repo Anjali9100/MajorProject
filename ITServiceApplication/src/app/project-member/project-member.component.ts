@@ -29,7 +29,9 @@ export class ProjectMemberComponent {
   BranchID:any;
   ModuleId:any;
   EmployeeId:any;
-  loginId:number=3;
+  loginId:any;
+  roleName:any;
+  roleId:any;
   
   
 
@@ -45,6 +47,12 @@ export class ProjectMemberComponent {
 
   ngOnInit(): void {
     this.getMemberRecord();
+    if (typeof window !== 'undefined') {
+      this.loginId = sessionStorage.getItem('userId');
+      this.roleId = sessionStorage.getItem('RoleId');
+      this.roleName = sessionStorage.getItem('roleName');
+      // console.log(this.roleId);
+    }
   }
 
 
@@ -129,20 +137,20 @@ export class ProjectMemberComponent {
 
   toggleStatus(item: any): void {
     // if(confirm("Are you sure want to "))
-    item.status = item.status == 0 ? 1 : 0; 
-    this.memberService.updateStatus(item.projectMemberId, item.status, this.loginId).subscribe({
-        next: (response) => {
-          if(response.message=="Status updated"){
-            this.showMsg="Status updated successfully";
-            setTimeout(() => {
-              this.showMsg = "";
-            }, 5000);
+      item.status = item.status == 0 ? 1 : 0; 
+      this.memberService.updateStatus(item.projectMemberId, item.status, this.loginId).subscribe({
+          next: (response) => {
+            if(response.message=="Status updated"){
+              this.showMsg="Status updated successfully";
+              setTimeout(() => {
+                this.showMsg = "";
+              }, 5000);
+            }
+          },
+          error: (error) => {
+              console.error('Failed to update status', error);
           }
-        },
-        error: (error) => {
-            console.error('Failed to update status', error);
-        }
-    });
+      });
   }
 
 

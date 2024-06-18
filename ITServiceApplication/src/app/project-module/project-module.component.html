@@ -36,20 +36,38 @@
             <tbody>
                 @if(moduleRecord && moduleRecord.length>0){
                     @for (item of moduleRecord; track $index) {
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>{{$index+1}}</td>
-                            <td>{{item.projectName}}</td>
-                            <td>{{item.branchName}}</td>
-                            <td>{{item.moduleName}}</td>
-                            <td>{{item.moduleDescription}}</td>
-                            <td>{{item.moduleStartDate}}</td>
-                            <td>{{item.moduleEndDate}}</td>
-                            <td>
-                                <button class="btn edit-btn" data-toggle="modal"  data-target="#projectModule" title="Edit Record" (click)="editRecord(item)" ><i class="fas fa-edit"></i></button>
-                                <button class="btn delete-btn" title="Delete Record" (click)="deleteRecord(item.proModuleId)"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                            </td>
-                        </tr>
+                        @if(item.empId==loginId && roleId!=1){
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>{{$index+1}}</td>
+                                <td>{{item.projectName}}</td>
+                                <td>{{item.branchName}}</td>
+                                <td>{{item.moduleName}}</td>
+                                <td>{{item.moduleDescription}}</td>
+                                <td>{{item.moduleStartDate}}</td>
+                                <td>{{item.moduleEndDate}}</td>
+                                <td>
+                                    <button class="btn edit-btn" data-toggle="modal"  data-target="#projectModule" title="Edit Record" (click)="editRecord(item)" ><i class="fas fa-edit"></i></button>
+                                    <button class="btn delete-btn" title="Delete Record" (click)="deleteRecord(item.proModuleId)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </td>
+                            </tr>
+                        }@else if(roleId==1){
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>{{$index+1}}</td>
+                                <td>{{item.projectName}}</td>
+                                <td>{{item.branchName}}</td>
+                                <td>{{item.moduleName}}</td>
+                                <td>{{item.moduleDescription}}</td>
+                                <td>{{item.moduleStartDate}}</td>
+                                <td>{{item.moduleEndDate}}</td>
+                                <td>
+                                    <button class="btn edit-btn" data-toggle="modal"  data-target="#projectModule" title="Edit Record" (click)="editRecord(item)" ><i class="fas fa-edit"></i></button>
+                                    <button class="btn delete-btn" title="Delete Record" (click)="deleteRecord(item.proModuleId)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </td>
+                            </tr>
+                        }
+                        
                     }
                 }@else {
                     <tr>

@@ -15,12 +15,19 @@ export class ProjectBranchComponent {
   branchRecord: any[] = [];  
   showMsg: string = "";
   ProjectID:any;
+  loginId:any;
+  roleName:any;
+  roleId:any;
 
 
   constructor(private branchService:ProjectBranchService, private projectService:ProjectService){}
 
   ngOnInit(): void {
     this.getBranchRecord();
+    if (typeof window !== 'undefined') {
+      this.loginId = sessionStorage.getItem('userId');
+      this.roleId = sessionStorage.getItem('RoleId');
+    }
   }
 
   
@@ -46,7 +53,6 @@ export class ProjectBranchComponent {
     this.branchService.getBranchRecord()
       .subscribe({
         next: (data) => {
-          console.log(data);
           this.branchRecord = data
         },
         error: (err) => {

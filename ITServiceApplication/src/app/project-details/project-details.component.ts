@@ -15,6 +15,8 @@ export class ProjectDetailsComponent {
   showMsg: string = "";
   managerRecord:any;
   empId:any;
+  loginId:any;
+  roleId:any;
 
 
   constructor(private projectService:ProjectService, private empService:EmployeeService){
@@ -23,7 +25,10 @@ export class ProjectDetailsComponent {
 
   ngOnInit(): void {
     this.getProjectRecord();
-    
+    if (typeof window !== 'undefined') {
+      this.loginId = sessionStorage.getItem('userId');
+      this.roleId = sessionStorage.getItem('RoleId');
+    }
   }
 
 

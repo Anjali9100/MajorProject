@@ -11,10 +11,10 @@ import { CreateRequestComponent } from './create-request/create-request.componen
 import { ProfleComponent } from './profle/profle.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
-import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
+// import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { EmailPageComponent } from './email-page/email-page.component';
-import { StartPageComponent } from './start-page/start-page.component';
+// import { StartPageComponent } from './start-page/start-page.component';
 
 // import { SignInComponent } from '@aws-amplify/ui-angular';
 // import { SignUpComponent } from '@aws-amplify/ui-angular';

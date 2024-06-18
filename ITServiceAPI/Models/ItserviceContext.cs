@@ -475,6 +475,9 @@ public partial class ItserviceContext : DbContext
             entity.Property(e => e.LastName)
                 .HasMaxLength(100)
                 .IsUnicode(false);
+            entity.Property(e => e.ManagerTeamLead)
+                .HasMaxLength(201)
+                .IsUnicode(false);
             entity.Property(e => e.MemberModifyDate).HasColumnType("datetime");
             entity.Property(e => e.ModuleDescription).HasColumnType("text");
             entity.Property(e => e.ModuleName)
@@ -486,8 +489,10 @@ public partial class ItserviceContext : DbContext
             entity.Property(e => e.ProjectName)
                 .HasMaxLength(255)
                 .IsUnicode(false);
-            entity.Property(e => e.RoleName)
-                .HasMaxLength(201)
+            entity.Property(e => e.RoleDescription).HasColumnType("text");
+            entity.Property(e => e.RoleModifyDate).HasColumnType("datetime");
+            entity.Property(e => e.UserRole)
+                .HasMaxLength(100)
                 .IsUnicode(false);
         });
 

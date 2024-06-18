@@ -48,31 +48,15 @@ export class CreateRequestComponent {
   }
 
   ngOnInit(): void {
-    
     if (typeof window !== 'undefined') {
       this.loginId = sessionStorage.getItem('userId');
-      this.checkRoleId = sessionStorage.getItem('RoleId');
-      if (this.checkRoleId) {
-        this.getRoleNameById(this.checkRoleId);
-      }
-
+      this.roleName = sessionStorage.getItem('roleName');
       if (this.loginId) {
         this.getRequestRecord(this.loginId);
       }
     }
   }
 
-
-
-  getRoleNameById(roleId:any) {
-    this.roleService.getRoleById(roleId).subscribe({
-      next: (role) => {
-        this.roleName = role.roleName.toLowerCase();
-      },
-      error: (error) => console.error('Error fetching role:', error)
-    });
-  }
-  
 
 
   getManagerOrTeamLeadRecord(){
@@ -123,7 +107,7 @@ export class CreateRequestComponent {
 
   toggleStatus(item: any): void {
     console.log(this.roleName);
-    if (this.roleName !== 'employee') {  
+    if (this.roleName !== 'Employee') {  
       item.status = item.status === 0 ? 1 : 0;
       if (item.status === 1) {
         if (confirm("Are you sure you want to Approve?")) {
@@ -155,7 +139,6 @@ export class CreateRequestComponent {
       .subscribe({
         next: (data) => {
           this.requestRecord = data
-          console.log(data)
         },
         error: (err) => {
           console.log(err);

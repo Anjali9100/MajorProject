@@ -12,7 +12,9 @@
                 <div class="input-group" style="flex-grow: 1; min-width: 250px; max-width: 60%;">
                     <input type="text" class="form-control" placeholder="Search Brands" aria-label="Search Brands">
                 </div>
-                <button class="btn btn-primary ml-2" (click)="openForm()" data-toggle="modal" data-target="#projectMemberModal">Assign Project</button>
+                @if(roleName=="Admin" || roleName=="Manager" || roleName=="Team Lead"){
+                    <button class="btn btn-primary ml-2" (click)="openForm()" data-toggle="modal" data-target="#projectMemberModal">Assign Project</button>
+                }
             </div>
         </div>
     </div>
@@ -31,46 +33,121 @@
                     <th>Start date</th>
                     <th>End Date</th>
                     <th>Manager name</th>
-                    <th>Status</th>
                     <th>Task Completion</th>
-                    <th>Actions</th>
+                    @if(roleName=="Admin" || roleName=="Manager" || roleName=="Team Lead"){
+                        <th>Status</th>
+                        <th>Actions</th>
+                    }
                 </tr>
             </thead>
             
             <tbody>
                 @if(memberRecord && memberRecord.length>0){
                     @for (item of memberRecord; track $index) {
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>{{$index+1}}</td>
-                            <td>{{item.firstName +' '+ item.lastName}}</td>
-                            <td>{{item.projectName}}</td>
-                            <td>{{item.branchName}}</td>
-                            <td>{{item.moduleName}}</td>
-                            <td>{{item.moduleDescription}}</td>
-                            <td>{{item.moduleStartDate}}</td>
-                            <td>{{item.moduleEndDate}}</td>
-                            <td>{{item.roleName}}</td>
-                            <td>
-                                <button class="btn" [class.btn-danger]="item.status == 0" [class.btn-success]="item.status != 0" (click)="toggleStatus(item)">
-                                    {{ item.status == 0 ? 'Not Assign' : 'Assign' }}
-                                </button>                                
-                            </td>
-                            <td>
-                                @if(item.approved==0){
-                                    <button class="btn btn-danger p-1">Pending(for user only)</button>
+                        @if(item.empId==loginId && item.roleName!=1){
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>{{$index+1}}</td>
+                                <td>{{item.firstName +' '+ item.lastName}}</td>
+                                <td>{{item.projectName}}</td>
+                                <td>{{item.branchName}}</td>
+                                <td>{{item.moduleName}}</td>
+                                <td>{{item.moduleDescription}}</td>
+                                <td>{{item.moduleStartDate}}</td>
+                                <td>{{item.moduleEndDate}}</td>
+                                <td>{{item.roleName}}</td>
+                                <td>
+                                    @if(item.approved==0){
+                                        <button class="btn btn-danger p-1">Pending(for user only)</button>
+                                    }
+                                    @else if(item.approved==1){
+                                        <button class="btn btn-danger">Pending</button>
+                                    }@else {
+                                        <button class="btn btn-success">Approved</button>
+                                    }
+                                </td>
+                                @if(roleName=="Admin" || roleName=="Manager" || roleName=="Team Lead"){
+                                    <td>
+                                        <button class="btn" [class.btn-danger]="item.status == 0" [class.btn-success]="item.status != 0" (click)="toggleStatus(item)">
+                                            {{ item.status == 0 ? 'Not Assign' : 'Assign' }}
+                                        </button>                               
+                                    </td>
+                                    <td>
+                                        <button class="btn edit-btn" data-toggle="modal" data-target="#projectMemberModal" title="Edit Record" (click)="editRecord(item)" ><i class="fas fa-edit"></i></button>
+                                        <button class="btn delete-btn" title="Delete Record" (click)="deleteRecord(item.projectMemberId)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    </td>
                                 }
-                                @else if(item.approved==1){
-                                    <button class="btn btn-danger">Pending</button>
-                                }@else {
-                                    <button class="btn btn-success">Approved</button>
+                            </tr>
+                        }@else if((item.empId==loginId && item.roleName=="Manager") || (item.empId==loginId && item.roleName=="Team Lead")){
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>{{$index+1}}</td>
+                                <td>{{item.firstName +' '+ item.lastName}}</td>
+                                <td>{{item.projectName}}</td>
+                                <td>{{item.branchName}}</td>
+                                <td>{{item.moduleName}}</td>
+                                <td>{{item.moduleDescription}}</td>
+                                <td>{{item.moduleStartDate}}</td>
+                                <td>{{item.moduleEndDate}}</td>
+                                <td>{{item.roleName}}</td>
+                                <td>
+                                    @if(item.approved==0){
+                                        <button class="btn btn-danger p-1">Pending(for user only)</button>
+                                    }
+                                    @else if(item.approved==1){
+                                        <button class="btn btn-danger">Pending</button>
+                                    }@else {
+                                        <button class="btn btn-success">Approved</button>
+                                    }
+                                </td>
+                                @if(roleName=="Admin" || roleName=="Manager" || roleName=="Team Lead"){
+                                    <td>
+                                        <button class="btn" [class.btn-danger]="item.status == 0" [class.btn-success]="item.status != 0" (click)="toggleStatus(item)">
+                                            {{ item.status == 0 ? 'Not Assign' : 'Assign' }}
+                                        </button>                               
+                                    </td>
+                                    <td>
+                                        <button class="btn edit-btn" data-toggle="modal" data-target="#projectMemberModal" title="Edit Record" (click)="editRecord(item)" ><i class="fas fa-edit"></i></button>
+                                        <button class="btn delete-btn" title="Delete Record" (click)="deleteRecord(item.projectMemberId)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    </td>
                                 }
-                            </td>
-                            <td>
-                                <button class="btn edit-btn" data-toggle="modal" data-target="#projectMemberModal" title="Edit Record" (click)="editRecord(item)" ><i class="fas fa-edit"></i></button>
-                                <button class="btn delete-btn" title="Delete Record" (click)="deleteRecord(item.projectMemberId)"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                            </td>
-                        </tr>
+                            </tr>
+                        }@else if(roleId==1){
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>{{$index+1}}</td>
+                                <td>{{item.firstName +' '+ item.lastName}}</td>
+                                <td>{{item.projectName}}</td>
+                                <td>{{item.branchName}}</td>
+                                <td>{{item.moduleName}}</td>
+                                <td>{{item.moduleDescription}}</td>
+                                <td>{{item.moduleStartDate}}</td>
+                                <td>{{item.moduleEndDate}}</td>
+                                <td>{{item.roleName}}</td>
+                                <td>
+                                    @if(item.approved==0){
+                                        <button class="btn btn-danger p-1">Pending(for user only)</button>
+                                    }
+                                    @else if(item.approved==1){
+                                        <button class="btn btn-danger">Pending</button>
+                                    }@else {
+                                        <button class="btn btn-success">Approved</button>
+                                    }
+                                </td>
+                                @if(roleName=="Admin" || roleName=="Manager" || roleName=="Team Lead"){
+                                    <td>
+                                        <button class="btn" [class.btn-danger]="item.status == 0" [class.btn-success]="item.status != 0" (click)="toggleStatus(item)">
+                                            {{ item.status == 0 ? 'Not Assign' : 'Assign' }}
+                                        </button>                               
+                                    </td>
+                                    <td>
+                                        <button class="btn edit-btn" data-toggle="modal" data-target="#projectMemberModal" title="Edit Record" (click)="editRecord(item)" ><i class="fas fa-edit"></i></button>
+                                        <button class="btn delete-btn" title="Delete Record" (click)="deleteRecord(item.projectMemberId)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    </td>
+                                }
+                            </tr>
+                        }
+                        
                     }
                 }@else {
                     <tr>
@@ -107,19 +184,35 @@
         </div>
         <div class="modal-body">
             <form #projectMemberData="ngForm" (ngSubmit)="saveProjectMember(projectMemberData)">
-                <div class="form-group">
-                    <label for="RoleId">Manager/Team Lead</label>
-                    <select (change)="onManagerRoleChange()" [(ngModel)]="selectManagerId" id="RoleId" name="RoleId" class="form-control">
-                        <option [value]="null">Select Manager</option>
-                        <option *ngFor="let x of managerRecord" [value]="x.empId" [selected]="x.empId==RoleId">{{ x.firstName + ' ' + x.lastName }}</option>
-                    </select>
-                </div>
+                @if(roleId==1){
+                    <div class="form-group">
+                        <label for="RoleId">Manager/Team Lead</label>
+                        <select (change)="onManagerRoleChange()" [(ngModel)]="selectManagerId" id="RoleId" name="RoleId" class="form-control">
+                            <option [value]="null">Select Manager</option>
+                            <option *ngFor="let x of managerRecord" [value]="x.empId" [selected]="x.empId==RoleId">{{ x.firstName + ' ' + x.lastName }}</option>
+                        </select>
+                    </div>
+                }@else {
+                    <input type="hidden" [(ngModel)]="loginId" name="RoleId">
+                }
+                
                 <div class="form-group">
                     <label for="ProjectID">Select Project</label>
-                    <select [(ngModel)]="selectedProjectId" (change)="onProjectChange()" id="ProjectID" name="ProjectID" class="form-control">
+                    <!-- <select [(ngModel)]="selectedProjectId" (change)="onProjectChange()" id="ProjectID" name="ProjectID" class="form-control">
                         <option [value]="null">Select Project</option>
                         <option *ngFor="let x of project" [value]="x.projectId" [selected]="x.projectId==ProjectID ">{{ x.projectName }}</option>
                         <option *ngIf="!project?.length" disabled>No Record Found</option>
+                    </select> -->
+                    {{roleId}}
+                    <select [(ngModel)]="selectedProjectId" (change)="onProjectChange()" id="ProjectID" name="ProjectID" class="form-control">
+                        <option [ngValue] ="null">Select Project</option>
+                        @for(x of project;track project){
+                            @if(x.empId==loginId){
+                                <option [value]="x.projectId">{{ x.projectName }}</option>
+                            }@else if(roleId==1){
+                                <option [value]="x.projectId">{{ x.projectName }}</option>
+                            }
+                        }
                     </select>
                 </div>
                 <div class="form-group">
