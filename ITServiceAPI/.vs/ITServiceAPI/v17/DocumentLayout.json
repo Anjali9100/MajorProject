@@ -102,7 +102,8 @@
               "RelativeToolTip": "Controllers\\RolesController.cs",
               "ViewState": "AQIAAB8AAAAAAAAAAAAowCkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T14:01:32.157Z"
+              "WhenOpened": "2024-06-17T14:01:32.157Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -112,7 +113,7 @@
               "RelativeDocumentMoniker": "Models\\ItserviceContext.cs",
               "ToolTip": "D:\\MajorProject\\ITServiceAPI\\Models\\ItserviceContext.cs",
               "RelativeToolTip": "Models\\ItserviceContext.cs",
-              "ViewState": "AQIAAD0AAAAAAAAAAAAqwB8AAAAqAAAA",
+              "ViewState": "AQIAAAQBAAAAAAAAAAAowAkBAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-14T06:27:23.187Z",
               "EditorCaption": ""
@@ -127,7 +128,8 @@
               "RelativeToolTip": "Controllers\\ProjectController.cs",
               "ViewState": "AQIAACoAAAAAAAAAAAAQwDwAAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T04:21:44.422Z"
+              "WhenOpened": "2024-06-14T04:21:44.422Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -152,7 +154,8 @@
               "RelativeToolTip": "Models\\ViewRequestDetail.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAcwDcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T18:25:16.2Z"
+              "WhenOpened": "2024-06-17T18:25:16.2Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -164,7 +167,8 @@
               "RelativeToolTip": "Controllers\\UserController.cs",
               "ViewState": "AQIAABUAAAAAAAAAAAAAwCsAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T04:45:05.738Z"
+              "WhenOpened": "2024-06-14T04:45:05.738Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -176,7 +180,8 @@
               "RelativeToolTip": "Controllers\\ProjectModulesController.cs",
               "ViewState": "AQIAAGkAAAAAAAAAAADwvzcAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T10:54:54.936Z"
+              "WhenOpened": "2024-06-14T10:54:54.936Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -188,7 +193,8 @@
               "RelativeToolTip": "Controllers\\ProjectBranchController.cs",
               "ViewState": "AQIAACQAAAAAAAAAAAAowC4AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T07:16:43.298Z"
+              "WhenOpened": "2024-06-14T07:16:43.298Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -200,7 +206,8 @@
               "RelativeToolTip": "Models\\Request.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T04:45:31.646Z"
+              "WhenOpened": "2024-06-16T04:45:31.646Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -212,7 +219,8 @@
               "RelativeToolTip": "Models\\User.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAA9wBMAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T12:04:42.397Z"
+              "WhenOpened": "2024-06-17T12:04:42.397Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -224,7 +232,8 @@
               "RelativeToolTip": "Controllers\\ProjectMemberController.cs",
               "ViewState": "AQIAAFcAAAAAAAAAAAAmwGYAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T10:55:33.051Z"
+              "WhenOpened": "2024-06-14T10:55:33.051Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -236,7 +245,8 @@
               "RelativeToolTip": "Models\\ProjectMember.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAxwAkAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T15:29:59.542Z"
+              "WhenOpened": "2024-06-15T15:29:59.542Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -248,7 +258,8 @@
               "RelativeToolTip": "Models\\ProjectsModule.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T10:58:17.127Z"
+              "WhenOpened": "2024-06-14T10:58:17.127Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -260,7 +271,8 @@
               "RelativeToolTip": "Models\\ProjectBranch.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAUwBUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T06:37:37.291Z"
+              "WhenOpened": "2024-06-14T06:37:37.291Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -272,7 +284,8 @@
               "RelativeToolTip": "Models\\Project.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T03:32:03.821Z"
+              "WhenOpened": "2024-06-14T03:32:03.821Z",
+              "EditorCaption": ""
             }
           ]
         }
