@@ -31,7 +31,9 @@ public partial class User
 
     public virtual ICollection<ProjectAction> ProjectActions { get; set; } = new List<ProjectAction>();
 
-    public virtual ICollection<ProjectMember> ProjectMembers { get; set; } = new List<ProjectMember>();
+    public virtual ICollection<ProjectMember> ProjectMemberEmps { get; set; } = new List<ProjectMember>();
+
+    public virtual ICollection<ProjectMember> ProjectMemberManagerTeamLeads { get; set; } = new List<ProjectMember>();
 
     public virtual ICollection<Project> Projects { get; set; } = new List<Project>();
 

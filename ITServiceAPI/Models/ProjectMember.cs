@@ -23,9 +23,13 @@ public partial class ProjectMember
 
     public int Approved { get; set; }
 
+    public int? ManagerTeamLeadId { get; set; }
+
     public virtual ProjectBranch? Branch { get; set; }
 
     public virtual User? Emp { get; set; }
+
+    public virtual User? ManagerTeamLead { get; set; }
 
     public virtual ProjectsModule? ProModule { get; set; }
 

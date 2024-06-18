@@ -161,6 +161,7 @@ public partial class ItserviceContext : DbContext
             entity.Property(e => e.Approved).HasColumnName("approved");
             entity.Property(e => e.BranchId).HasColumnName("branchId");
             entity.Property(e => e.EmpId).HasColumnName("EmpID");
+            entity.Property(e => e.ManagerTeamLeadId).HasColumnName("managerTeamLeadId");
             entity.Property(e => e.ModifyDate)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
@@ -173,9 +174,13 @@ public partial class ItserviceContext : DbContext
                 .HasForeignKey(d => d.BranchId)
                 .HasConstraintName("FK_ProjectMembers_branchId");
 
-            entity.HasOne(d => d.Emp).WithMany(p => p.ProjectMembers)
+            entity.HasOne(d => d.Emp).WithMany(p => p.ProjectMemberEmps)
                 .HasForeignKey(d => d.EmpId)
                 .HasConstraintName("FK_ProjectMembers_EmpID");
+
+            entity.HasOne(d => d.ManagerTeamLead).WithMany(p => p.ProjectMemberManagerTeamLeads)
+                .HasForeignKey(d => d.ManagerTeamLeadId)
+                .HasConstraintName("FK__ProjectMe__manag__607251E5");
 
             entity.HasOne(d => d.ProModule).WithMany(p => p.ProjectMembers)
                 .HasForeignKey(d => d.ProModuleId)
@@ -468,14 +473,17 @@ public partial class ItserviceContext : DbContext
             entity.Property(e => e.Email)
                 .HasMaxLength(100)
                 .IsUnicode(false);
-            entity.Property(e => e.EmpId).HasColumnName("EmpID");
             entity.Property(e => e.FirstName)
                 .HasMaxLength(100)
                 .IsUnicode(false);
             entity.Property(e => e.LastName)
                 .HasMaxLength(100)
                 .IsUnicode(false);
-            entity.Property(e => e.ManagerTeamLead)
+            entity.Property(e => e.ManagerRoleName)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.ManagerTeamLeadId).HasColumnName("managerTeamLeadId");
+            entity.Property(e => e.ManagerTeamLeadName)
                 .HasMaxLength(201)
                 .IsUnicode(false);
             entity.Property(e => e.MemberModifyDate).HasColumnType("datetime");
@@ -485,12 +493,14 @@ public partial class ItserviceContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.ProjectDescription).HasColumnType("text");
             entity.Property(e => e.ProjectId).HasColumnName("ProjectID");
+            entity.Property(e => e.ProjectMemberEmpId).HasColumnName("ProjectMemberEmpID");
             entity.Property(e => e.ProjectMemberId).HasColumnName("ProjectMemberID");
             entity.Property(e => e.ProjectName)
                 .HasMaxLength(255)
                 .IsUnicode(false);
             entity.Property(e => e.RoleDescription).HasColumnType("text");
             entity.Property(e => e.RoleModifyDate).HasColumnType("datetime");
+            entity.Property(e => e.UserEmpId).HasColumnName("UserEmpID");
             entity.Property(e => e.UserRole)
                 .HasMaxLength(100)
                 .IsUnicode(false);

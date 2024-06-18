@@ -15,13 +15,14 @@ export class ProjectMemberComponent {
   formTitle: string = "Add Project";
   btnText: string = "Save";
   project:any;
-  branch:any;
+  branches:any;
   module:any;
   managerRecord:any;
   employeeRecord:any;
   showMsg: string = "";
   selectedProjectId: number | null = null;
   selectManagerId: number | null = null;
+  selectedBranchId: number| null = null;
   memberRecord:any;
 
   RoleId:any;
@@ -32,6 +33,7 @@ export class ProjectMemberComponent {
   loginId:any;
   roleName:any;
   roleId:any;
+  projectBasedOnRole:any;
   
   
 
@@ -51,8 +53,8 @@ export class ProjectMemberComponent {
       this.loginId = sessionStorage.getItem('userId');
       this.roleId = sessionStorage.getItem('RoleId');
       this.roleName = sessionStorage.getItem('roleName');
-      // console.log(this.roleId);
     }
+    this.getProjectBasedOnRole(this.loginId);
   }
 
 
@@ -83,16 +85,25 @@ export class ProjectMemberComponent {
   }
 
 
+  getProjectBasedOnRole(loginId:any){
+    this.projectService.getProjectByRole(loginId).subscribe((data: any) => {
+      this.projectBasedOnRole = data;
+    });
+  }
+
+
+
+
 
   onProjectChange(): void {
     if (this.selectedProjectId !== null) {
       this.branchService.getBranchBasedOnPro(this.selectedProjectId).subscribe((data: any) => {
-        this.branch = data;
+        this.branches = data;
       });
 
-      this.projectModule.getModuleBasedOnProject(this.selectedProjectId).subscribe((data: any) => {
-        this.module = data;
-      });
+      // this.projectModule.getModuleBasedOnProject(this.selectedProjectId).subscribe((data: any) => {
+      //   this.module = data;
+      // });
     }
   }
 
@@ -110,6 +121,17 @@ export class ProjectMemberComponent {
         }
       });
   }
+
+
+
+
+  onBranchChange() {
+    console.log(this.selectedBranchId);
+    this.projectModule.getModuleRecordByBranchId(this.selectedBranchId).subscribe((data: any[]) => {
+      this.module = data;
+    });
+  }
+
 
 
   openForm() {
@@ -157,9 +179,11 @@ export class ProjectMemberComponent {
 
 
   saveProjectMember(memberData: any): void {
+    console.log(memberData);
     if(this.btnText=="Save"){
       this.memberService.createModule(memberData.value).subscribe({
         next: (data) => {
+          console.log(data)
           if(data.message=="save"){
             this.getMemberRecord();
             memberData.reset();

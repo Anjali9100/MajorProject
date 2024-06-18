@@ -26,6 +26,18 @@ namespace ITServiceAPI.Controllers
 
 
 
+        [HttpGet("getModuleByBranchId/{branchId}")]
+        public async Task<ActionResult<IEnumerable<ProjectModuleView>>> GetProjectsModulesByBranch(int branchId)
+        {
+            var records = await _context.ProjectModuleViews
+                                        .Where(m => m.BranchId == branchId).ToListAsync();
+
+            return Ok(records);
+        }
+
+
+
+
         [HttpGet("getModuleBasedOnProject/{id}")]
         public async Task<ActionResult<ProjectBranch>> GetProjectModule(int id)
         {

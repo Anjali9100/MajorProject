@@ -9,7 +9,7 @@ public partial class ViewProjectMemberDetail
 
     public int? ProjectId { get; set; }
 
-    public int? EmpId { get; set; }
+    public int? ProjectMemberEmpId { get; set; }
 
     public int? RoleId { get; set; }
 
@@ -23,6 +23,10 @@ public partial class ViewProjectMemberDetail
 
     public DateTime MemberModifyDate { get; set; }
 
+    public int? ManagerTeamLeadId { get; set; }
+
+    public int? UserEmpId { get; set; }
+
     public string? FirstName { get; set; }
 
     public string? LastName { get; set; }
@@ -35,7 +39,7 @@ public partial class ViewProjectMemberDetail
 
     public bool? UserIsActive { get; set; }
 
-    public string? ManagerTeamLead { get; set; }
+    public string? ManagerTeamLeadName { get; set; }
 
     public string? ProjectName { get; set; }
 
@@ -72,4 +76,6 @@ public partial class ViewProjectMemberDetail
     public string? RoleDescription { get; set; }
 
     public DateTime? RoleModifyDate { get; set; }
+
+    public string? ManagerRoleName { get; set; }
 }

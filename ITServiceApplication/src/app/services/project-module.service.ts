@@ -23,6 +23,11 @@ export class ProjectModuleService {
   }
 
 
+  getModuleRecordByBranchId(branchId:any): Observable<any[]> {
+    return this.http.get<any[]>(`https://localhost:7071/api/ProjectsModules/getModuleByBranchId/${branchId}`);
+  }
+
+
   getModuleCount():Observable<any[]>{
     return this.http.get<any[]>('https://localhost:7071/api/ProjectsModules/projectModuleCount');
   }

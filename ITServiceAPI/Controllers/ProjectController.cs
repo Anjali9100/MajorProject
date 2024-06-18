@@ -26,10 +26,10 @@ namespace ITServiceAPI.Controllers
 
 
 
-        [HttpGet("getProjectByUserID/{rolesId}")]
-        public async Task<ActionResult<IEnumerable<Project>>> GetProjectsById(int rolesId)
+        [HttpGet("getProjectByUserID/{loginId}")]
+        public async Task<ActionResult<IEnumerable<Project>>> GetProjectsById(int loginId)
         {
-            var record = await _context.ViewProjectDetails.Where(p=>p.EmpId== rolesId).ToListAsync();
+            var record = await _context.ViewProjectDetails.Where(p=>p.EmpId== loginId).ToListAsync();
             return Ok(record);
         }
 
